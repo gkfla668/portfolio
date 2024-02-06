@@ -36,6 +36,24 @@ export const bubble = keyframes`
   }
 `;
 
+export const neonFlash = keyframes`
+    0% {
+      text-shadow:
+        0 0 2px #eee,
+        0 0 4px #42d17d,
+        0 0 8px #42d17d;
+    }
+    50% {
+      text-shadow: 0 0 4px #eee;
+    }
+    100% {
+      text-shadow:
+        0 0 2px #eee,
+        0 0 4px #42d17d,
+        0 0 8px #42d17d;
+    }
+  `;
+
 export const flash = keyframes`
     0% {
       opacity: 0;
@@ -64,4 +82,18 @@ export const slideIn = keyframes`
   to {
     transform: translateX(0);
   }
+`;
+
+export const scrollFlash = keyframes`
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(8px);
+      opacity: 0;
+    }
 `;
