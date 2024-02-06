@@ -15,7 +15,10 @@ const HandleWheel = (
         window.pageYOffset +
         document.getElementById(sections[index + 1])!.getBoundingClientRect()
           .top; // 다음 섹션의 상대적 위치를 계산하여 할당
-    } catch (e) {}
+    } catch (error) {
+      // 예외 처리: 콘솔에 에러 출력 또는 다른 예외 처리 로직 추가
+      console.error("Error during scroll:", error);
+    }
   }
   // 휠을 위로 돌렸을 때 이전 섹션으로 이동하는 부분
   else if (delta < 0 && index !== 0) {
@@ -24,7 +27,10 @@ const HandleWheel = (
         window.pageYOffset +
         document.getElementById(sections[index - 1])!.getBoundingClientRect()
           .top; // 이전 섹션의 상대적 위치를 계산하여 할당
-    } catch (e) {}
+    } catch (error) {
+      // 예외 처리: 콘솔에 에러 출력 또는 다른 예외 처리 로직 추가
+      console.error("Error during scroll:", error);
+    }
   }
 
   // 계산 된 위치로 부드러운 스크롤 이동을 수행
