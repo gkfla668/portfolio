@@ -1,24 +1,25 @@
 import { useRecoilValue } from "recoil";
-import { homeSlideState } from "@/recoil/states";
-import Main from "./main";
+import { isHomeState } from "@/recoil/states";
 import Intro from "@/components/Intro/Intro";
 import Bubble from "@/components/Bubble";
 import Circle from "@/components/Circle";
+import Main from "./main";
 
 export default function Home() {
-  const isNext = useRecoilValue(homeSlideState);
+  const isHome = useRecoilValue(isHomeState);
 
   return (
-    <div id="Home">
+    <div>
       <Bubble />
       {/* <Circle /> */}
-      {getPageComponent(isNext)}
+
+      {getPageComponent(isHome)}
     </div>
   );
 }
 
-const getPageComponent = (isNext: boolean) => {
-  if (isNext) return <Main />;
+const getPageComponent = (isHome: boolean) => {
+  if (isHome) return <Main />;
 
   return <Intro />;
 };
