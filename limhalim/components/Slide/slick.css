@@ -1,0 +1,24 @@
+.slick-dots button {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.slick-dots button::before {
+  display: none;
+}
+
+/* 비활성화된 dots */
+.slick-dots li:not(.slick-active) button {
+  width: 4px;
+  height: 4px;
+  background-color: #eee;
+}
+
+/* 활성화된 dots */
+.slick-dots li.slick-active button {
+  background-color: #42d17d;
+  box-shadow: 0 0 10px #42d17d;
+  width: 10px;
+  height: 10px;
+}
