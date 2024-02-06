@@ -1,12 +1,11 @@
+import Contents from "@/components/TableOfContents";
 import AboutPage from "../../components/About";
 import SkillsPage from "../../components/Skills";
 import ProjectsPage from "../../components/Projects";
 import ContactPage from "../../components/Contact";
 
 import Bubble from "@/components/Bubble";
-import Contents from "@/components/TableOfContents";
 import Footer from "@/components/Layout/Footer";
-
 import HandleWheel from "@/utils/handleWheel";
 
 const Main = () => {
