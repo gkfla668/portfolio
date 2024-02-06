@@ -59,27 +59,28 @@ const Contents = () => {
           <S.Text>All rights Reserved.</S.Text>
         </div>
         {/** Menu */}
-        <div className="z-10 flex w-full flex-col gap-10 px-8">
-          {sections.map((section, index) => (
-            <Link
-              key={section}
-              to={section}
-              spy={true}
-              smooth={true}
-              onClick={() => scrollToSection(index)}
-            >
-              <Menu category={section.toUpperCase()} />
-            </Link>
-          ))}
+        <div className="flex w-full items-center justify-between">
+          <div className="z-10 flex w-full flex-col gap-10 px-8">
+            {sections.map((section, index) => (
+              <Link
+                key={section}
+                to={section}
+                spy={true}
+                smooth={true}
+                onClick={() => scrollToSection(index)}
+              >
+                <Menu category={section.toUpperCase()} />
+              </Link>
+            ))}
+          </div>
+          <S.MouseBox>
+            <S.Mouse>
+              <S.Scroller />
+            </S.Mouse>
+            <S.H1>Scroll down</S.H1>
+          </S.MouseBox>
         </div>
       </div>
-
-      <S.MouseBox>
-        <S.Mouse>
-          <S.Scroller />
-        </S.Mouse>
-        <S.H1>Scroll down</S.H1>
-      </S.MouseBox>
     </S.Container>
   );
 };

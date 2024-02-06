@@ -1,4 +1,4 @@
-import { drift, fadeIn, slideIn, scrollFlash } from "@/styles/animation";
+import { fadeIn, slideIn, scrollFlash } from "@/styles/animation";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -49,15 +49,12 @@ export const Text = styled.h1`
 `;
 
 export const MouseBox = styled.div`
-  position: absolute;
-
-  top: 88%;
-  left: 94%;
-
-  margin: auto;
+  margin-right: 4rem;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 0.5rem;
 
   justify-content: center;
@@ -65,8 +62,8 @@ export const MouseBox = styled.div`
 `;
 
 export const Mouse = styled.div`
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 32px;
 
   padding: 8px 0px;
 
@@ -91,5 +88,6 @@ export const H1 = styled.h1`
   font-family: "Kanit", sans-serif;
   color: white;
 
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  white-space: nowrap;
 `;
