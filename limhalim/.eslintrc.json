@@ -7,7 +7,7 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "rules": {
     // 'React' must be in scope when using JSX 에러 해결 (Next.js)
