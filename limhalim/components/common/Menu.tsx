@@ -50,7 +50,7 @@ const Box = styled.div`
       animation-iteration-count: 1;
     }
 
-    text-shadow: 0 0 6px #eee;
+    text-shadow: 0 0 4px #eee;
   }
 `;
 
