@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Bubble />
-      {/* <Circle /> */}
+      <Circle />
 
       {getPageComponent(isHome)}
     </div>

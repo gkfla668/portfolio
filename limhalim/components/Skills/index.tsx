@@ -13,7 +13,6 @@ import RecoilSVG from "../../public/icons/recoil_circle.png";
 import ReduxSVG from "../../public/icons/redux_circle.webp";
 import TailwindSVG from "../../public/icons/tailwind_circle.png";
 import StyledComponentsSVG from "../../public/icons/styledcomponents_circle.png";
-import Frontend from "../../public/icons/frontend.png";
 
 import { fadeIn } from "@/styles/animation";
 

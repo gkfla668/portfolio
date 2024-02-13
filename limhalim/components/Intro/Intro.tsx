@@ -52,7 +52,7 @@ const Intro = () => {
       typingInterval = setInterval(() => {
         setTitle(() => {
           const nextIndex = index + 1;
-          let result = completionWord.substring(0, nextIndex);
+          const result = completionWord.substring(0, nextIndex);
 
           setIndex(nextIndex);
 

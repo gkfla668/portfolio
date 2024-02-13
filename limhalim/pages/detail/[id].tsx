@@ -113,8 +113,13 @@ const DetailPage = () => {
               <InfoContainer>
                 <InfoTitle>기술 스택</InfoTitle>
                 <InfoText>
-                  {dataById[parsedId].infoList[3].map(item => (
-                    <Image src={item} alt="stack" className="rounded-xl" />
+                  {dataById[parsedId].infoList[3].map((item, index) => (
+                    <Image
+                      key={index}
+                      src={item}
+                      alt="stack"
+                      className="rounded-xl"
+                    />
                   ))}
                 </InfoText>
               </InfoContainer>
