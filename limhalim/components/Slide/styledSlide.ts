@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  animation: ${fadeIn} 4s forwards;
+  animation: ${fadeIn} 6s forwards;
 `;
 
 export const Content = styled.div`
