@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "next": "14.1.0",
+    "next-videos": "^1.4.1",
     "react": "^18",
     "react-dom": "^18",
     "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.1",
+    "recoil": "^0.7.7",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
@@ -20,6 +24,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-scroll": "^1.8.10",
+    "@types/react-slick": "^0.23.13",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "autoprefixer": "^10.0.1",
