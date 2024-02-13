@@ -5,7 +5,8 @@ import Link from "next/link";
 
 const SlideContainer = (props: SlideProps) => {
   const handleDetailNavigation = () => {
-    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+    if (typeof window !== "undefined")
+      sessionStorage.setItem("scrollPosition", window.scrollY.toString());
   };
 
   return (

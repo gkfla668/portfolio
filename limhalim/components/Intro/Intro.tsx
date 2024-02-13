@@ -43,7 +43,8 @@ const Intro = () => {
   const setIsHome = useSetRecoilState(isHomeState);
 
   useEffect(() => {
-    sessionStorage.removeItem("scrollPosition");
+    if (typeof window !== "undefined")
+      sessionStorage.removeItem("scrollPosition");
 
     let typingInterval: NodeJS.Timeout;
 

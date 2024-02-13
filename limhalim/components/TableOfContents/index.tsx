@@ -15,7 +15,8 @@ const Contents = () => {
   const sections: string[] = ["About", "Skills", "Projects", "Contact"];
 
   const setIsClick = useSetRecoilState(isHomeState);
-  const scrollPosition = sessionStorage.getItem("scrollPosition");
+  const scrollPosition =
+    typeof window !== "undefined" && sessionStorage.getItem("scrollPosition");
 
   useEffect(() => {
     if (scrollPosition) {
@@ -24,7 +25,8 @@ const Contents = () => {
       });
     }
 
-    sessionStorage.removeItem("scrollPosition");
+    if (typeof window !== "undefined")
+      sessionStorage.removeItem("scrollPosition");
   }, [scrollPosition]);
 
   const scrollToSection = (sectionId: number) => {
