@@ -173,11 +173,11 @@ const Skills = () => {
   }, []);
 
   return (
-    <div id="Skills" className="min-h-screen w-full px-32 py-20">
+    <div id="Skills" className="flex min-h-screen w-full flex-col px-32 py-20">
       {scroll && (
         <>
           <Title title="Skills" />
-          <div className="flex items-start justify-center p-4">
+          <div className="flex h-full flex-1 flex-col items-center justify-center p-4">
             <Wrapper>
               <Center>Front-end</Center>
               <OutCircle>

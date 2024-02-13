@@ -19,7 +19,7 @@ const Slide = () => {
 
   return (
     <>
-      <Slider {...settings} className="mx-20 ">
+      <Slider {...settings} className="mx-20">
         <SlideContainer
           index={1}
           imgURL={dataById[1].imgURL}

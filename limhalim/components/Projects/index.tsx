@@ -29,9 +29,7 @@ const Projects = () => {
       {scroll && (
         <>
           <Title title="Projects" />
-          <div className="flex flex-1 flex-col">
-            <Slide />
-          </div>
+          <Slide />
         </>
       )}
     </div>
