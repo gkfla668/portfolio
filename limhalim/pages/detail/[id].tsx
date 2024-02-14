@@ -46,12 +46,14 @@ export const Link = styled.a`
   font-family: "NanumSquareExtraBold";
   border-radius: 2.4rem;
 
-  padding: 1.4rem 2.6rem;
+  padding: 1.4rem 3.2rem;
 
   color: #42d17d;
   background-color: #42d17e29;
   font-size: 1.4rem;
   font-weight: 700;
+
+  white-space: nowrap;
 
   &:hover {
     color: #272727;
@@ -164,11 +166,11 @@ const InfoTitle = styled.div`
   font-family: "NanumSquareBold";
   border-radius: 2.4rem;
 
-  width: 9.8rem;
+  width: 14rem;
 
   white-space: nowrap;
 
-  padding: 0.8rem 0;
+  padding: 0.8rem 1rem;
   text-align: center;
 
   color: #42d17d;

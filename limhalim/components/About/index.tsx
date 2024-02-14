@@ -12,6 +12,8 @@ const SubTitleContainer = styled.div`
   font-family: "NanumSquareExtraBold";
   font-size: 4.8rem;
 
+  white-space: nowrap;
+
   color: #eee;
   opacity: 0.4;
 
