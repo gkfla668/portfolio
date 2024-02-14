@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
+import Image from "next/image";
 import { isHomeState } from "@/recoil/states";
-import styled from "styled-components";
 import { drift } from "@/styles/animation";
-
+import ArrowSVG from "../../public/icons/left-arrow.png";
+import styled from "styled-components";
 import * as S from "./styledIntro";
 
 const WaveCircle = styled.span`
@@ -87,9 +88,12 @@ const Intro = () => {
           <div className="flex flex-col items-center justify-center gap-20 transition-all duration-200">
             <S.Text>© 2024 Lim, Ha-Lim. All rights Reserved.</S.Text>
             <S.Button onClick={() => setIsHome(true)}>
-              <span></span>
-              <span></span>
-              <span></span>
+              <Image
+                src={ArrowSVG}
+                alt="arrow"
+                width={48}
+                className="opacity-[0.4]"
+              />
             </S.Button>
           </div>
         )}
