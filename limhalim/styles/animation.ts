@@ -84,6 +84,17 @@ export const slideIn = keyframes`
   }
 `;
 
+export const flashAndSlide = keyframes`  
+from {
+    transform: translateX(80%);
+       opacity: 0;
+  }
+  to {
+    transform: translateX(-20%);
+       opacity: 1;
+  }
+`;
+
 export const scrollFlash = keyframes`
     0% {
       opacity: 0;
@@ -97,3 +108,30 @@ export const scrollFlash = keyframes`
       opacity: 0;
     }
 `;
+
+export const Rotate = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  `;
+
+export const RotateReverse = keyframes`
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  `;
+
+export const CircleRotate = keyframes`
+    from {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(405deg);
+    }
+  `;
