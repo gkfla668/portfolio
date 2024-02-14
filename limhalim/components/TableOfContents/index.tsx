@@ -40,7 +40,7 @@ const Contents = () => {
   return (
     <S.Container
       id="Contents"
-      className="z-10 flex min-h-screen w-full items-center justify-center bg-[#42d17ed8] px-52"
+      className="z-10 flex min-h-screen w-full items-center justify-center bg-[#42d17eb6] px-52"
     >
       <WaveAnimation />
 
