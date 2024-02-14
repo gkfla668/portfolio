@@ -10,11 +10,10 @@ import HandleScroll from "@/utils/handleScroll";
 import { fadeIn } from "@/styles/animation";
 
 const H1 = styled.div`
-  font-family: "NanumSquareExtraBold";
-
-  font-size: 2.8rem;
-  letter-spacing: 0.1rem;
   color: #42d17d;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
 
   animation: ${fadeIn} 8s;
 `;
@@ -111,21 +110,19 @@ const Container = styled.div`
 `;
 
 const Date = styled.div`
-  font-family: "NanumSquareBold";
-  border-radius: 2.4rem;
-
-  padding: 1rem 0;
-  text-align: center;
-  width: 14rem;
-
   color: #42d17d;
   background-color: #42d17e29;
   font-size: 1.6rem;
+  font-weight: 900;
+  text-align: center;
+
+  border-radius: 2.4rem;
+  padding: 1rem 0;
+  width: 14rem;
 `;
 
 const Text = styled.p`
   color: white;
-  font-family: "NanumSquare";
   font-size: 1.8rem;
 
   display: flex;

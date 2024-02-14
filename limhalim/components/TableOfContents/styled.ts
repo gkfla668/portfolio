@@ -31,13 +31,10 @@ export const IconWrapper = styled.div`
 `;
 
 export const Text = styled.h1`
-  opacity: 0.8;
-
-  font-family: "NanumSquareExtraBold";
   color: #ffffffed;
   font-size: 1.6rem;
   font-weight: 900;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   white-space: nowrap;
 
   animation: ${fadeIn} 6s;

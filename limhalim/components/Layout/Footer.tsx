@@ -15,13 +15,13 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: "NanumSquareBold";
+  font-weight: 900;
   font-size: 1.4rem;
   color: white;
 `;
 
 const Text = styled.p`
-  font-family: "NanumSquareBold";
+  font-weight: 900;
   font-size: 1rem;
   color: #ffffffd7;
 `;
