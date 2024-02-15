@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useSetRecoilState } from "recoil";
-import Image from "next/image";
+import { isHomeState } from "@/recoil/states";
 
 import Menu from "@/components/common/Menu";
-import { isHomeState } from "@/recoil/states";
 
 import HomeSVG from "/public/icons/home.svg";
 
@@ -13,6 +13,16 @@ import WaveAnimation from "../WaveAnimation";
 
 const Contents = () => {
   const sections: string[] = ["About", "Skills", "Projects", "Contact"];
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const setIsClick = useSetRecoilState(isHomeState);
   const scrollPosition =
@@ -54,35 +64,56 @@ const Contents = () => {
         />
       </S.IconWrapper>
 
-      <div className="flex w-full">
-        <div className="flex flex-col items-center justify-center border-r-[0.2rem] px-28">
-          <S.Text>© 2024</S.Text>
-          <S.Text>Lim, Ha-Lim.</S.Text>
-          <S.Text>All rights Reserved.</S.Text>
-        </div>
-        {/** Menu */}
-        <div className="flex w-full items-center justify-between">
-          <div className="z-10 flex w-full flex-col gap-10 px-8">
-            {sections.map((section, index) => (
-              <Link
-                key={section}
-                to={section}
-                spy={true}
-                smooth={true}
-                onClick={() => scrollToSection(index)}
-              >
-                <Menu category={section.toUpperCase()} />
-              </Link>
-            ))}
+      {isMobile ? (
+        <div className="flex w-full">
+          {/** Menu */}
+          <div className="flex w-full items-center justify-between">
+            <div className="z-10 flex w-full flex-col gap-6">
+              {sections.map((section, index) => (
+                <Link
+                  key={section}
+                  to={section}
+                  spy={true}
+                  smooth={true}
+                  onClick={() => scrollToSection(index)}
+                >
+                  <Menu category={section.toUpperCase()} />
+                </Link>
+              ))}
+            </div>
           </div>
-          <S.MouseBox>
-            <S.Mouse>
-              <S.Scroller />
-            </S.Mouse>
-            <S.H1>Scroll down</S.H1>
-          </S.MouseBox>
         </div>
-      </div>
+      ) : (
+        <div className="flex w-full">
+          <div className="flex flex-col items-center justify-center border-r-[0.2rem] px-28">
+            <S.Text>© 2024</S.Text>
+            <S.Text>Lim, Ha-Lim.</S.Text>
+            <S.Text>All rights Reserved.</S.Text>
+          </div>
+          {/** Menu */}
+          <div className="flex w-full items-center justify-between">
+            <div className="z-10 flex w-full flex-col gap-10 px-8">
+              {sections.map((section, index) => (
+                <Link
+                  key={section}
+                  to={section}
+                  spy={true}
+                  smooth={true}
+                  onClick={() => scrollToSection(index)}
+                >
+                  <Menu category={section.toUpperCase()} />
+                </Link>
+              ))}
+            </div>
+            <S.MouseBox>
+              <S.Mouse>
+                <S.Scroller />
+              </S.Mouse>
+              <S.H1>Scroll down</S.H1>
+            </S.MouseBox>
+          </div>
+        </div>
+      )}
     </S.Container>
   );
 };

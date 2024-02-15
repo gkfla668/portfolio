@@ -9,6 +9,10 @@ export const Container = styled.div`
   align-items: center;
 
   animation: ${fadeIn} 6s forwards;
+
+  @media (max-width: 768px) {
+    padding: 3.6rem 0 1.6rem 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -19,6 +23,23 @@ export const Content = styled.div`
   align-items: start;
 
   gap: 5.2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: auto;
+    gap: 2rem;
+    height: auto;
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  @media (max-width: 768px) {
+    height: 24rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -28,6 +49,10 @@ export const Title = styled.h1`
 
   text-align: start;
   line-height: 3.6rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -38,6 +63,10 @@ export const SubTitle = styled.h2`
 
   text-align: start;
   letter-spacing: 0rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const TagList = styled.ul`
@@ -45,6 +74,10 @@ export const TagList = styled.ul`
   gap: 1rem;
 
   margin-top: 1.6rem;
+
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+  }
 `;
 
 export const TagItem = styled.li`
@@ -60,6 +93,10 @@ export const TagItem = styled.li`
   letter-spacing: 0.1rem;
 
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const DetailButton = styled.button`
@@ -78,5 +115,13 @@ export const DetailButton = styled.button`
     color: #272727;
     background-color: #42d17d;
     font-weight: 900;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 3.6rem;
+
+    padding: 1.2rem 0;
+    font-size: 1.4rem;
   }
 `;

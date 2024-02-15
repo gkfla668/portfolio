@@ -5,6 +5,10 @@ export const Title = styled.div`
   color: White;
   font-size: 3.6rem;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 2.8rem;
+  }
 `;
 
 export const SubTitle = styled.div`
@@ -12,6 +16,10 @@ export const SubTitle = styled.div`
   color: White;
   opacity: 0.6;
   font-size: 2.4rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const TagList = styled.ul`
@@ -19,6 +27,10 @@ export const TagList = styled.ul`
   gap: 1rem;
 
   margin-top: 1.4rem;
+
+  @media (max-width: 768px) {
+    gap: 0.4rem;
+  }
 `;
 
 export const TagItem = styled.li`
@@ -34,6 +46,10 @@ export const TagItem = styled.li`
   letter-spacing: 0.1rem;
 
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const Link = styled.a`
@@ -52,6 +68,10 @@ export const Link = styled.a`
     background-color: #42d17d;
     font-weight: 900;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const OverViewText = styled.div`
@@ -60,6 +80,11 @@ export const OverViewText = styled.div`
   font-size: 1.6rem;
   line-height: 2.4rem;
   margin-left: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
 `;
 
 export const SubText = styled.div`
@@ -68,6 +93,11 @@ export const SubText = styled.div`
   font-weight: 900;
 
   padding: 1.2rem 0rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    padding: 0.6rem 0rem;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -76,22 +106,28 @@ export const InfoContainer = styled.div`
   gap: 1.2rem;
 
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 0.8rem;
+  }
 `;
 
 export const InfoTitle = styled.div`
-  font-weight: 900;
   border-radius: 2.4rem;
-
   width: 14rem;
-
   white-space: nowrap;
-
   padding: 0.8rem 1rem;
-  text-align: center;
 
   color: #42d17d;
+  font-weight: 900;
   background-color: #42d17e29;
   font-size: 1.3rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 0.6rem 0rem;
+  }
 `;
 
 export const InfoText = styled.div`
@@ -101,4 +137,6 @@ export const InfoText = styled.div`
   display: flex;
   width: 100%;
   gap: 0.4rem;
+
+  white-space: nowrap;
 `;

@@ -13,6 +13,10 @@ export const Job = styled.div`
   span {
     opacity: 0;
     margin-right: 0.2rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.8rem;
+    }
   }
 
   :nth-child(1) {
@@ -106,6 +110,10 @@ export const Birth = styled.p`
   font-weight: 900;
 
   animation: ${fade} 14s forwards;
+
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+  }
 `;
 
 export const Bar = styled.div`
@@ -117,6 +125,11 @@ export const Bar = styled.div`
   animation: ${fade} 12s forwards;
 
   border-radius: 0.2rem;
+
+  @media (max-width: 768px) {
+    width: 36rem;
+    height: 0.4rem;
+  }
 `;
 
 export const ActivitiesWrapper = styled.div`
@@ -124,6 +137,10 @@ export const ActivitiesWrapper = styled.div`
   flex-direction: column;
 
   gap: 1.2rem;
+
+  @media (max-width: 768px) {
+    gap: 0.8rem;
+  }
 
   :nth-child(1) {
     animation: ${fadeIn} 4s forwards;
@@ -146,6 +163,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 1.6rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 export const Date = styled.div`
@@ -158,6 +179,11 @@ export const Date = styled.div`
 
   border-radius: 2.4rem;
   padding: 0.8rem 1.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
 `;
 
 export const DetailText = styled.p`
@@ -168,4 +194,9 @@ export const DetailText = styled.p`
   gap: 0.4rem;
 
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    white-space: wrap;
+  }
 `;

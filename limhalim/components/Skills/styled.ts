@@ -13,6 +13,11 @@ export const Wrapper = styled.div`
   position: relative;
 
   animation: ${fadeIn} 6s forwards;
+
+  @media (max-width: 768px) {
+    width: 340px;
+    height: 340px;
+  }
 `;
 
 export const OutCircle = styled.div`
@@ -73,6 +78,11 @@ export const Item = styled.div`
   &:hover {
     scale: 1.1;
   }
+
+  @media (max-width: 768px) {
+    width: 56px;
+    height: 56px;
+  }
 `;
 
 export const InCircle = styled.div`
@@ -123,4 +133,10 @@ export const Center = styled.div`
   text-align: center;
   border-radius: 2.4rem;
   padding: 1rem 2.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.8rem;
+  }
 `;

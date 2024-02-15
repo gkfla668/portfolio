@@ -40,6 +40,10 @@ const Box = styled.div`
 
   span {
     animation: ${wave} 2s ease-in-out infinite;
+
+    @media (max-width: 768px) {
+      font-size: 3.2rem;
+    }
   }
 `;
 

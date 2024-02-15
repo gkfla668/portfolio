@@ -6,6 +6,11 @@ const Box = styled.div`
   color: white;
   font-size: 4rem;
 
+  @media (max-width: 768px) {
+    font-size: 2.8rem;
+    padding: 0.8rem 0;
+  }
+
   padding: 1rem 6rem;
 
   animation: ${fadeIn} 6s;
