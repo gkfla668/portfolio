@@ -50,25 +50,27 @@ const Contents = () => {
   return (
     <S.Container
       id="Contents"
-      className="z-10 flex min-h-screen w-full items-center justify-center bg-[#42d17eb6] px-52"
+      className="z-10 flex min-h-screen w-full items-center justify-center bg-[#42d17ed8] px-60"
     >
       <WaveAnimation />
 
-      <S.IconWrapper>
-        <Image
-          src={HomeSVG}
-          alt="home"
-          width={30}
-          height={30}
-          onClick={() => setIsClick(false)}
-        />
-      </S.IconWrapper>
+      {!isMobile && (
+        <S.IconWrapper>
+          <Image
+            src={HomeSVG}
+            alt="home"
+            width={30}
+            height={30}
+            onClick={() => setIsClick(false)}
+          />
+        </S.IconWrapper>
+      )}
 
       {isMobile ? (
         <div className="flex w-full">
           {/** Menu */}
           <div className="flex w-full items-center justify-between">
-            <div className="z-10 flex w-full flex-col gap-6">
+            <div className="z-10 flex w-full flex-col items-center justify-center gap-6">
               {sections.map((section, index) => (
                 <Link
                   key={section}

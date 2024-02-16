@@ -11,6 +11,14 @@ export const Container = styled.div`
   &:focus {
     will-change: auto; /* 애니메이션이 활성 상태가 아닐 때는 will-change를 제거 */
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const IconWrapper = styled.div`

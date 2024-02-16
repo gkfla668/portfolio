@@ -24,12 +24,12 @@ const Projects = () => {
   return (
     <div
       id="Projects"
-      className="flex min-h-screen w-full flex-col px-32 py-20"
+      className="flex min-h-screen w-full flex-col px-16 py-20 md:px-32"
     >
       {scroll && (
         <>
           <Title title="Projects" />
-          <div className="flex flex-1 flex-col items-center justify-center">
+          <div className="flex flex-1 flex-col items-center md:justify-center">
             <Slide />
           </div>
         </>

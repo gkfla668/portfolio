@@ -1,8 +1,8 @@
 import Image from "next/image";
-import * as S from "./styledSlide";
-import { SlideProps } from "@/types/global";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import * as S from "./styledSlide";
+import { SlideProps } from "@/types/global";
 
 const SlideContainer = (props: SlideProps) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -28,7 +28,7 @@ const SlideContainer = (props: SlideProps) => {
           <Image
             src={props.imgURL}
             alt="img"
-            width={isMobile ? 440 : 1400}
+            width={isMobile ? 400 : 1400}
             className="rounded-xl"
           />
         </S.ImageWrapper>

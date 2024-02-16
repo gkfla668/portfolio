@@ -32,11 +32,14 @@ const Skills = () => {
   }, [scroll]);
 
   return (
-    <div id="Skills" className="flex min-h-screen w-full flex-col px-32 py-20">
+    <div
+      id="Skills"
+      className="flex min-h-screen w-full flex-col px-16 py-20 md:px-32"
+    >
       {scroll && (
         <>
           <Title title="Skills" />
-          <div className="flex h-full flex-1 flex-col items-center justify-center p-4">
+          <div className="relative flex h-full flex-1 flex-col items-center justify-center p-4">
             <S.Wrapper>
               <S.Center>{stack}</S.Center>
               <S.OutCircle>

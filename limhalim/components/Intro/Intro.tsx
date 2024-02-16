@@ -41,6 +41,17 @@ const Intro = () => {
   const [title, setTitle] = useState("");
   const [index, setIndex] = useState(0); // 현재 타이핑 한 글자의 index
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const setIsHome = useSetRecoilState(isHomeState);
 
   useEffect(() => {
@@ -91,7 +102,7 @@ const Intro = () => {
               <Image
                 src={ArrowSVG}
                 alt="arrow"
-                width={48}
+                width={isMobile ? 36 : 48}
                 className="opacity-[0.4]"
               />
             </S.Button>

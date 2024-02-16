@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const Job = styled.div`
   font-size: 4.8rem;
   font-weight: 900;
-
   white-space: nowrap;
 
   color: #eee;
@@ -15,7 +14,7 @@ export const Job = styled.div`
     margin-right: 0.2rem;
 
     @media (max-width: 768px) {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
     }
   }
 
@@ -118,24 +117,22 @@ export const Birth = styled.p`
 
 export const Bar = styled.div`
   border: 1.6px solid #eeeeee53;
+  border-radius: 0.2rem;
   opacity: 0;
 
   width: 28rem;
   height: 0.6rem;
   animation: ${fade} 12s forwards;
 
-  border-radius: 0.2rem;
-
   @media (max-width: 768px) {
-    width: 36rem;
-    height: 0.4rem;
+    width: 28rem;
+    height: 0.3rem;
   }
 `;
 
 export const ActivitiesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   gap: 1.2rem;
 
   @media (max-width: 768px) {
@@ -189,11 +186,10 @@ export const Date = styled.div`
 export const DetailText = styled.p`
   color: white;
   font-size: 1.5rem;
+  white-space: nowrap;
 
   display: flex;
   gap: 0.4rem;
-
-  white-space: nowrap;
 
   @media (max-width: 768px) {
     font-size: 1.3rem;

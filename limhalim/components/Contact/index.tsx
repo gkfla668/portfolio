@@ -16,6 +16,10 @@ const H1 = styled.div`
   letter-spacing: 0.1rem;
 
   animation: ${fadeIn} 8s;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
 `;
 
 const Button = styled.a`
@@ -45,7 +49,10 @@ const Contact = () => {
   }, []);
 
   return (
-    <div id="Contact" className="relative min-h-screen w-full px-32 py-20">
+    <div
+      id="Contact"
+      className="relative min-h-screen w-full px-16 py-20 md:px-32"
+    >
       {scroll && (
         <>
           <Title title="Contact" />
@@ -61,7 +68,7 @@ const Contact = () => {
               </Container>
             </Wrapper>
 
-            <div className="flex gap-20">
+            <div className="flex gap-12 md:gap-20">
               <Button href="https://github.com/gkfla668">
                 <Image src={githubPNG} alt="github" width={40} height={40} />{" "}
                 <H1>Github</H1>
@@ -107,6 +114,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 1.6rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 const Date = styled.div`
@@ -119,6 +130,12 @@ const Date = styled.div`
   border-radius: 2.4rem;
   padding: 1rem 0;
   width: 14rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
+    width: 12rem;
+  }
 `;
 
 const Text = styled.p`
@@ -127,6 +144,10 @@ const Text = styled.p`
 
   display: flex;
   gap: 0.4rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export default Contact;

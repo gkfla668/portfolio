@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   margin: 0px auto;
   width: 480px;
   height: 480px;
-  position: relative;
+  position: absolute;
 
   animation: ${fadeIn} 6s forwards;
 
@@ -135,8 +135,8 @@ export const Center = styled.div`
   padding: 1rem 2.8rem;
 
   @media (max-width: 768px) {
-    font-size: 1.4rem;
-    padding: 0.8rem 1.6rem;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.7rem;
     border-radius: 1.8rem;
   }
 `;

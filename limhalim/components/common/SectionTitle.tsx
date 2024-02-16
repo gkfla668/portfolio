@@ -5,7 +5,6 @@ const Box = styled.div`
   font-family: "Climate Crisis", sans-serif;
   color: white;
   font-size: 4rem;
-
   letter-spacing: 0.2rem;
 
   animation: ${fadeIn} 3s;
@@ -42,7 +41,7 @@ const Box = styled.div`
     animation: ${wave} 2s ease-in-out infinite;
 
     @media (max-width: 768px) {
-      font-size: 3.2rem;
+      font-size: 3rem;
     }
   }
 `;

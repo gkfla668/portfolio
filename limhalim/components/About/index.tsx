@@ -35,13 +35,13 @@ const About = () => {
   return (
     <div
       id="About"
-      className="flex min-h-screen w-full flex-col px-20 py-12 md:px-32 md:py-20"
+      className="flex min-h-screen w-full flex-col px-16 py-12 md:px-32 md:py-20"
     >
       {scroll && (
         <>
           <Title title="About" />
 
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 md:gap-8">
+          <div className="flex w-full flex-1 flex-col items-center md:justify-center md:gap-8">
             {isMobile ? (
               <div className="flex w-full flex-col items-start">
                 <S.Job>
@@ -63,7 +63,6 @@ const About = () => {
                   <span>e</span>
                   <span>r</span>
                 </S.Job>
-                <S.Bar />
               </div>
             ) : (
               <div className="flex items-center justify-center gap-10 py-8">
@@ -92,7 +91,7 @@ const About = () => {
             )}
 
             {isMobile ? (
-              <div className="flex flex-col justify-center gap-10">
+              <div className="flex flex-col justify-center gap-12">
                 <S.ProfileImageWrapper>
                   <Image
                     src={Profile}

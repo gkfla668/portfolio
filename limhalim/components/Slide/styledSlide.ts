@@ -2,7 +2,7 @@ import { fadeIn } from "@/styles/animation";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 8.6rem 7.2rem;
+  padding: 7.2rem 6.4rem;
 
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   animation: ${fadeIn} 6s forwards;
 
   @media (max-width: 768px) {
-    padding: 3.6rem 0 1.6rem 0;
+    padding: 2.8rem 0 1.6rem 0;
   }
 `;
 
