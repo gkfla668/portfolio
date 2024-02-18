@@ -27,7 +27,7 @@ const DetailPage = () => {
 
       {isMobile
         ? dataById[parsedId] && (
-            <div className="flex w-[64%] flex-col items-center justify-center">
+            <div className="flex w-[80%] flex-col items-center justify-center">
               <div className="flex w-full flex-col gap-2">
                 <S.Title>{dataById[parsedId].title}</S.Title>
                 <S.SubTitle>{dataById[parsedId].subTitle}</S.SubTitle>
