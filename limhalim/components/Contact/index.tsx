@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Image from "next/image";
 
 import velogPNG from "/public/images/velog.png";
@@ -7,40 +6,18 @@ import githubPNG from "/public/images/github.png";
 
 import Title from "@/components/common/SectionTitle";
 import HandleScroll from "@/utils/handleScroll";
-import { fadeIn } from "@/styles/animation";
 
-const H1 = styled.div`
-  color: #42d17d;
-  font-size: 2.8rem;
-  font-weight: 900;
-  letter-spacing: 0.1rem;
-
-  animation: ${fadeIn} 8s;
-
-  @media (max-width: 768px) {
-    font-size: 2.2rem;
-  }
-`;
-
-const Button = styled.a`
-  display: flex;
-  gap: 1.2rem;
-  justify-content: start;
-  align-items: center;
-
-  opacity: 0.8;
-
-  &:hover {
-    opacity: 1;
-  }
-`;
+import * as S from "./styled";
 
 const Contact = () => {
   const [scroll, setScroll] = useState<boolean>(false);
+  const threshold = 2400;
 
   useEffect(() => {
-    const threshold = 2600;
     const scrollHandler = () => HandleScroll({ threshold, setScroll });
+
+    // 페이지 로드 시 현재 스크롤 위치 확인 및 scroll 상태 설정
+    scrollHandler();
 
     window.addEventListener("scroll", scrollHandler);
     return () => {
@@ -56,28 +33,40 @@ const Contact = () => {
       {scroll && (
         <>
           <Title title="Contact" />
-          <div className="absolute right-[4%] top-[60%] flex flex-col items-center justify-center p-4">
-            <Wrapper>
-              <Container>
-                <Date>Phone</Date>
-                <Text>010-6384-9653</Text>
-              </Container>
-              <Container>
-                <Date>Email</Date>
-                <Text>harim668@gmail.com</Text>
-              </Container>
-            </Wrapper>
+          <S.Text>
+            안녕하세요, 사용자의 경험을 우선시하는 프론트엔드 개발자입니다.
+          </S.Text>
+          <S.Text>
+            느리더라도 천천히, 포기하지 않는 개발자가 되기 위해 꾸준히 블로그를
+            운영하며 매 프로젝트마다 효율적으로 소통하며 개발하는 자세를 갖추려
+            하고 있습니다.
+          </S.Text>
+          <S.Text>
+            생각을 나누고, 지식을 공유하는 건강한 대화를 좋아합니다. <br />
+            언제든 편하게 연락주세요 :)
+          </S.Text>
+          <div className="absolute right-[3%] top-[65%] flex flex-col items-center justify-center p-4">
+            <S.Wrapper>
+              <S.Container>
+                <S.Info>Phone</S.Info>
+                <S.Detail>010-6384-9653</S.Detail>
+              </S.Container>
+              <S.Container>
+                <S.Info>Email</S.Info>
+                <S.Detail>harim668@gmail.com</S.Detail>
+              </S.Container>
+            </S.Wrapper>
 
             <div className="flex gap-12 md:gap-20">
-              <Button href="https://github.com/gkfla668">
+              <S.Link href="https://github.com/gkfla668">
                 <Image src={githubPNG} alt="github" width={40} height={40} />{" "}
-                <H1>Github</H1>
-              </Button>
+                <S.LinkTitle>Github</S.LinkTitle>
+              </S.Link>
 
-              <Button href="https://velog.io/@gkfla668">
+              <S.Link href="https://velog.io/@gkfla668">
                 <Image src={velogPNG} alt="velog" width={36} height={36} />
-                <H1>Blog</H1>
-              </Button>
+                <S.LinkTitle>Blog</S.LinkTitle>
+              </S.Link>
             </div>
           </div>
         </>
@@ -85,69 +74,5 @@ const Contact = () => {
     </div>
   );
 };
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-
-  padding: 2rem;
-
-  :nth-child(1) {
-    animation: ${fadeIn} 4s forwards;
-  }
-  :nth-child(2) {
-    animation: ${fadeIn} 5s forwards;
-  }
-  :nth-child(3) {
-    animation: ${fadeIn} 6s forwards;
-  }
-  :nth-child(4) {
-    animation: ${fadeIn} 7s forwards;
-  }
-  :nth-child(5) {
-    animation: ${fadeIn} 8s forwards;
-  }
-`;
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-
-  @media (max-width: 768px) {
-    gap: 1rem;
-  }
-`;
-
-const Date = styled.div`
-  color: #42d17d;
-  background-color: #42d17e29;
-  font-size: 1.6rem;
-  font-weight: 900;
-  text-align: center;
-
-  border-radius: 2.4rem;
-  padding: 1rem 0;
-  width: 14rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-    padding: 0.8rem 0;
-    width: 12rem;
-  }
-`;
-
-const Text = styled.p`
-  color: white;
-  font-size: 1.8rem;
-
-  display: flex;
-  gap: 0.4rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.4rem;
-  }
-`;
 
 export default Contact;
