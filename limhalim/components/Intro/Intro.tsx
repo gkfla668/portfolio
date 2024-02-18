@@ -41,16 +41,17 @@ const Intro = () => {
   const [title, setTitle] = useState("");
   const [index, setIndex] = useState(0); // 현재 타이핑 한 글자의 index
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
+    handleResize(); // 초기 호출
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [setIsMobile]); // 의존성 배열에 추가
 
   const setIsHome = useSetRecoilState(isHomeState);
 

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
-export const Title = styled.div`
+const Title = styled.div`
   font-weight: 900;
   color: White;
   font-size: 3.6rem;
@@ -18,7 +18,7 @@ export const Title = styled.div`
   }
 `;
 
-export const SubTitle = styled.div`
+const SubTitle = styled.div`
   font-weight: 900;
   color: White;
   opacity: 0.6;
@@ -29,7 +29,7 @@ export const SubTitle = styled.div`
   }
 `;
 
-export const TagList = styled.ul`
+const TagList = styled.ul`
   display: flex;
   gap: 1rem;
 
@@ -40,7 +40,7 @@ export const TagList = styled.ul`
   }
 `;
 
-export const TagItem = styled.li`
+const TagItem = styled.li`
   border-radius: 2rem;
   border: 1px solid #42d17d;
 
@@ -59,7 +59,7 @@ export const TagItem = styled.li`
   }
 `;
 
-export const Link = styled.a`
+const LinkStyled = styled.a`
   cursor: pointer;
 
   border-radius: 2.4rem;
@@ -81,7 +81,7 @@ export const Link = styled.a`
   }
 `;
 
-export const OverViewText = styled.div`
+const OverViewText = styled.div`
   color: white;
   opacity: 0.8;
   font-size: 1.6rem;
@@ -94,7 +94,7 @@ export const OverViewText = styled.div`
   }
 `;
 
-export const SubText = styled.div`
+const SubText = styled.div`
   color: white;
   font-size: 2.6rem;
   font-weight: 900;
@@ -107,7 +107,7 @@ export const SubText = styled.div`
   }
 `;
 
-export const InfoContainer = styled.div`
+const InfoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -119,7 +119,7 @@ export const InfoContainer = styled.div`
   }
 `;
 
-export const InfoTitle = styled.div`
+const InfoTitle = styled.div`
   border-radius: 2.4rem;
   width: 14rem;
   white-space: nowrap;
@@ -137,7 +137,7 @@ export const InfoTitle = styled.div`
   }
 `;
 
-export const InfoText = styled.div`
+const InfoText = styled.div`
   color: white;
   font-size: 1.4rem;
 
@@ -148,19 +148,21 @@ export const InfoText = styled.div`
   white-space: nowrap;
 `;
 
-const DetailPage = () => {
+const Detail = () => {
   const router = useRouter();
   const { id } = router.query;
   const parsedId = Array.isArray(id) ? Number(id[0]) : Number(id);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   return (
@@ -180,15 +182,18 @@ const DetailPage = () => {
                 </TagList>
               </div>
               <div className="mb-8 mt-20 flex w-full items-center justify-center gap-3 md:mt-24 md:gap-4">
-                <Link
+                <LinkStyled
                   href={dataById[parsedId].githubURL}
                   className="px-10 py-4"
                 >
                   깃허브 바로가기
-                </Link>
-                <Link href={dataById[parsedId].siteURL} className="px-10 py-4">
+                </LinkStyled>
+                <LinkStyled
+                  href={dataById[parsedId].siteURL}
+                  className="px-10 py-4"
+                >
                   사이트 바로가기
-                </Link>
+                </LinkStyled>
               </div>
 
               <Image
@@ -234,9 +239,12 @@ const DetailPage = () => {
                 </div>
               </div>
               <div className="mt-10">
-                <Link onClick={() => router.back()} className="px-14 py-6">
+                <LinkStyled
+                  onClick={() => router.back()}
+                  className="px-14 py-6"
+                >
                   목록으로 가기
-                </Link>
+                </LinkStyled>
               </div>
             </div>
           )
@@ -252,15 +260,18 @@ const DetailPage = () => {
                 </TagList>
               </div>
               <div className="mb-8 mt-24 flex w-full items-center justify-center gap-4">
-                <Link
+                <LinkStyled
                   href={dataById[parsedId].githubURL}
                   className="px-10 py-4"
                 >
                   깃허브 바로가기
-                </Link>
-                <Link href={dataById[parsedId].siteURL} className="px-10 py-4">
+                </LinkStyled>
+                <LinkStyled
+                  href={dataById[parsedId].siteURL}
+                  className="px-10 py-4"
+                >
                   사이트 바로가기
-                </Link>
+                </LinkStyled>
               </div>
 
               <Image
@@ -307,9 +318,12 @@ const DetailPage = () => {
                 </div>
               </div>
               <div className="mt-10">
-                <Link onClick={() => router.back()} className="px-14 py-6">
+                <LinkStyled
+                  onClick={() => router.back()}
+                  className="px-14 py-6"
+                >
                   목록으로 가기
-                </Link>
+                </LinkStyled>
               </div>
             </div>
           )}
@@ -317,4 +331,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default Detail;

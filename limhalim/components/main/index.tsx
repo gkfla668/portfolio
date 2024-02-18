@@ -1,8 +1,8 @@
 import Contents from "@/components/TableOfContents";
-import AboutPage from "../../components/About";
-import SkillsPage from "../../components/Skills";
-import ProjectsPage from "../../components/Projects";
-import ContactPage from "../../components/Contact";
+import AboutPage from "../About";
+import SkillsPage from "../Skills";
+import ProjectsPage from "../Projects";
+import ContactPage from "../Contact";
 
 import Bubble from "@/components/Bubble";
 import Footer from "@/components/Layout/Footer";
