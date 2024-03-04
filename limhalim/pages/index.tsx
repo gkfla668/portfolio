@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Bubble />
-      <Circle />
+      {/* <Circle /> */}
 
       {isHome ? <Main /> : <Intro />}
     </div>

@@ -12,6 +12,8 @@ const SlideContainer = (props: SlideProps) => {
       setIsMobile(window.innerWidth <= 768);
     };
 
+    handleResize(); // 초기에도 isMobile 상태를 설정
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

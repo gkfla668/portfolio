@@ -17,7 +17,9 @@ const About = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    window.addEventListener("resize", handleResize);
+    handleResize(); // 초기에도 isMobile 상태를 설정
+
+    window.addEventListener("resize", handleResize); // 윈도우의 크기가 변경될 때마다 이를 업데이트
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -144,6 +146,7 @@ const About = () => {
                     width={300}
                     loading="eager"
                     className="rounded-xl"
+                    unoptimized
                   />
                 </S.ProfileImageWrapper>
                 <S.ActivitiesWrapper>

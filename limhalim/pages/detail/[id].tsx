@@ -159,11 +159,11 @@ const Detail = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
+    handleResize(); // 초기에도 isMobile 상태를 설정, 이를 안하면 detail 페이지에 반응형이 안먹음
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMobile]);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[#272727] pb-20 pt-24 md:pt-36">

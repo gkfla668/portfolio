@@ -48,7 +48,8 @@ const Intro = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // 초기 호출
+    handleResize(); // 초기에도 isMobile 상태를 설정
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [setIsMobile]); // 의존성 배열에 추가
