@@ -485,3 +485,13 @@ const Detail = () => {
 };
 
 export default Detail;
+
+export async function getServerSideProps({
+  params: { id },
+}: {
+  params: { id: number };
+}) {
+  return {
+    props: { id },
+  };
+}
