@@ -130,9 +130,9 @@ const About = () => {
                     </S.DetailText>
                   </S.Container>
                   <S.Container>
-                    <S.Date>2019.03-2024-02</S.Date>
+                    <S.Date>2019.03-2024.08</S.Date>
                     <S.DetailText>
-                      아주대학교 디지털미디어학과 & 소프트웨어학과 졸업
+                      아주대학교 디지털미디어학과 & 소프트웨어학과 재학 중
                     </S.DetailText>
                   </S.Container>
                 </S.ActivitiesWrapper>
@@ -181,7 +181,7 @@ const About = () => {
                     </S.DetailText>
                   </S.Container>
                   <S.Container>
-                    <S.Date>2023.03-2023.06</S.Date>
+                    <S.Date>2023.03-2023.08</S.Date>
                     <S.DetailText>
                       <a
                         href="https://www.makeus.in/umc"
@@ -189,11 +189,11 @@ const About = () => {
                       >
                         UMC(University Makeus Challenge)
                       </a>
-                      4기, Web 파트 스터디장 수료
+                      4기, Web 파트 수료
                     </S.DetailText>
                   </S.Container>
                   <S.Container>
-                    <S.Date>2019.03-2024-02</S.Date>
+                    <S.Date>2019.03-2024.08</S.Date>
                     <S.DetailText>
                       <a
                         href="https://www.ajou.ac.kr/kr/index.do"
@@ -201,7 +201,7 @@ const About = () => {
                       >
                         아주대학교
                       </a>
-                      디지털미디어학과 & 소프트웨어학과 졸업
+                      디지털미디어학과 & 소프트웨어학과 재학 중
                     </S.DetailText>
                   </S.Container>
                 </S.ActivitiesWrapper>
