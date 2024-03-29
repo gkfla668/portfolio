@@ -48,13 +48,6 @@ const Slide = () => {
           subTitle={dataById[4].subTitle}
           tagList={dataById[4].tagList}
         />
-        <SlideContainer
-          index={5}
-          imgURL={dataById[5].imgURL}
-          title={dataById[5].title}
-          subTitle={dataById[5].subTitle}
-          tagList={dataById[5].tagList}
-        />
       </Slider>
     </>
   );
