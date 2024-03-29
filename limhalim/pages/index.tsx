@@ -3,7 +3,7 @@ import { isHomeState } from "@/recoil/states";
 
 import Intro from "@/components/Intro/Intro";
 import Bubble from "@/components/Bubble";
-import Circle from "@/components/Circle";
+// import Circle from "@/components/Circle";
 import Main from "../components/main";
 
 export default function Home() {
