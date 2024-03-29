@@ -486,27 +486,12 @@ const Detail = () => {
 
 export default Detail;
 
-export async function getStaticPaths() {
-  // 여기에서 사용 가능한 모든 id 값을 기반으로 paths 생성
-  return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-      { params: { id: "4" } },
-    ],
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({
+export async function getServerSideProps({
   params: { id },
 }: {
   params: { id: number };
 }) {
   return {
-    props: {
-      id,
-    },
+    props: { id },
   };
 }
