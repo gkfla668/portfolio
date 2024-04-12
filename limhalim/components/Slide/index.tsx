@@ -20,34 +20,16 @@ const Slide = () => {
   return (
     <>
       <Slider {...settings} className="mx-20 w-[112rem]">
-        <SlideContainer
-          index={1}
-          imgURL={dataById[1].imgURL}
-          title={dataById[1].title}
-          subTitle={dataById[1].subTitle}
-          tagList={dataById[1].tagList}
-        />
-        <SlideContainer
-          index={2}
-          imgURL={dataById[2].imgURL}
-          title={dataById[2].title}
-          subTitle={dataById[2].subTitle}
-          tagList={dataById[2].tagList}
-        />
-        <SlideContainer
-          index={3}
-          imgURL={dataById[3].imgURL}
-          title={dataById[3].title}
-          subTitle={dataById[3].subTitle}
-          tagList={dataById[3].tagList}
-        />
-        <SlideContainer
-          index={4}
-          imgURL={dataById[4].imgURL}
-          title={dataById[4].title}
-          subTitle={dataById[4].subTitle}
-          tagList={dataById[4].tagList}
-        />
+        {Object.values(dataById).map((item, index) => (
+          <SlideContainer
+            key={index}
+            index={index}
+            imgURL={item.imgURL}
+            title={item.title}
+            subTitle={item.subTitle}
+            tagList={item.tagList}
+          />
+        ))}
       </Slider>
     </>
   );
