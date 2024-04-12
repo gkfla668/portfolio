@@ -10,11 +10,11 @@ import * as S from "./styled";
 
 const About = () => {
   const [scroll, setScroll] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth < 768);
     };
 
     handleResize(); // 초기에도 isMobile 상태를 설정
