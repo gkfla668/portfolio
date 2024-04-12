@@ -1,5 +1,39 @@
 import styled from "styled-components";
-import { neonFlash, fadeIn, flashAndSlide } from "@/styles/animation";
+import {
+  neonFlash,
+  fadeIn,
+  flashAndSlide,
+  scrollFlash,
+  drift,
+} from "@/styles/animation";
+
+export const WaveCircle = styled.span`
+  div {
+    opacity: 0.2;
+    position: absolute;
+    top: 4%;
+    left: 50%;
+
+    background: #42d17e53;
+    width: 500px;
+    height: 500px;
+
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 50%;
+    border-radius: 40%;
+  }
+
+  :nth-child(1) {
+    animation: ${drift} 12s infinite linear;
+  }
+  :nth-child(2) {
+    animation: ${drift} 14s infinite linear;
+  }
+  :nth-child(3) {
+    animation: ${drift} 16s infinite linear;
+  }
+`;
 
 export const Container = styled.div`
   animation: ${fadeIn} 4s;
@@ -41,4 +75,12 @@ export const Text = styled.h1`
 export const Button = styled.div`
   cursor: pointer;
   animation: ${flashAndSlide} 6s infinite;
+`;
+
+export const H1 = styled.h1`
+  font-family: "Kanit", sans-serif;
+  color: white;
+
+  font-size: 1.4rem;
+  white-space: nowrap;
 `;

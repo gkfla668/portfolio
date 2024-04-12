@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
-import Image from "next/image";
 import { isHomeState } from "@/recoil/states";
 import { drift } from "@/styles/animation";
-import ArrowSVG from "../../public/icons/left-arrow.png";
+import * as S from "./styles";
 import styled from "styled-components";
-import * as S from "./styledIntro";
 
 const WaveCircle = styled.span`
   div {
@@ -40,19 +38,6 @@ const Intro = () => {
 
   const [title, setTitle] = useState("");
   const [index, setIndex] = useState(0); // 현재 타이핑 한 글자의 index
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize(); // 초기에도 isMobile 상태를 설정
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [setIsMobile]); // 의존성 배열에 추가
 
   const setIsHome = useSetRecoilState(isHomeState);
 
@@ -100,14 +85,12 @@ const Intro = () => {
         {index === completionWord.length && (
           <div className="flex flex-col items-center justify-center gap-20 transition-all duration-200">
             <S.Text>© 2024 Lim, Ha-Lim. All rights Reserved.</S.Text>
-            <S.Button onClick={() => setIsHome(true)}>
-              <Image
-                src={ArrowSVG}
-                alt="arrow"
-                width={isMobile ? 36 : 48}
-                className="opacity-[0.4]"
-              />
-            </S.Button>
+            <S.MouseBox>
+              <S.Mouse>
+                <S.Scroller />
+              </S.Mouse>
+              <S.H1>Scroll down</S.H1>
+            </S.MouseBox>
           </div>
         )}
       </div>
