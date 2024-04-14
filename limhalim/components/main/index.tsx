@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+
+import Intro from "../Intro/Intro";
 import AboutPage from "../About";
 import SkillsPage from "../Skills";
 import ProjectsPage from "../Projects";
@@ -5,11 +8,16 @@ import ContactPage from "../Contact";
 
 import HandleWheel from "@/utils/handleWheel";
 import * as S from "./styles";
-import Intro from "../Intro/Intro";
-import Bubble from "../Bubble";
-import { useEffect } from "react";
 
-const Main = () => {
+import Bubble from "../Bubble";
+
+interface BlogPost {
+  title: string;
+  link: string;
+  contentSnippet?: string;
+}
+
+const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
   const sections = ["Intro", "About", "Skills", "Projects", "Contact"];
 
   const scrollPosition =
@@ -31,20 +39,20 @@ const Main = () => {
       <Bubble />
       <div className="z-10 flex w-full flex-col">
         {sections.map((section, index) => (
-          <div
+          <S.PageContainerStyle
             key={section}
             id={section}
             onWheel={e => HandleWheel(e, index, sections)}
           >
-            {getPageComponent(section)}
-          </div>
+            {getPageComponent(section, latestPosts)}
+          </S.PageContainerStyle>
         ))}
       </div>
     </S.Container>
   );
 };
 
-const getPageComponent = (section: string) => {
+const getPageComponent = (section: string, latestPosts: BlogPost[]) => {
   switch (section) {
     case "Intro":
       return <Intro />;
@@ -55,7 +63,7 @@ const getPageComponent = (section: string) => {
     case "Projects":
       return <ProjectsPage />;
     case "Contact":
-      return <ContactPage />;
+      return <ContactPage latestPosts={latestPosts} />;
     default:
       return;
   }
