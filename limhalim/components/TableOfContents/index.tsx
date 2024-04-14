@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Link, animateScroll as scroll } from "react-scroll";
-import { useSetRecoilState } from "recoil";
-import { isHomeState } from "@/recoil/states";
 
 import Menu from "@/components/common/Menu";
 
@@ -26,7 +24,6 @@ const Contents = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const setIsClick = useSetRecoilState(isHomeState);
   const scrollPosition =
     typeof window !== "undefined" && sessionStorage.getItem("scrollPosition");
 
@@ -58,13 +55,7 @@ const Contents = () => {
 
       {!isMobile && (
         <S.IconWrapper>
-          <Image
-            src={HomeSVG}
-            alt="home"
-            width={30}
-            height={30}
-            onClick={() => setIsClick(false)}
-          />
+          <Image src={HomeSVG} alt="home" width={30} height={30} />
         </S.IconWrapper>
       )}
 
