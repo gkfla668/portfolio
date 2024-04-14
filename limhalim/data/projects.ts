@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 
 import WorryBox from "../public/images/worry-box.png";
-import Damdam from "../public/images/Damdam.jpg";
 import StockOneQ from "../public/images/StockOneQ.png";
 import LivePick from "../public/images/LivePick.png";
 
@@ -10,9 +9,7 @@ import ReactSVG from "../public/icons/react.svg";
 import JavaScriptSVG from "../public/icons/javascript.svg";
 import TypeScriptSVG from "../public/icons/typescript.svg";
 import RecoilSVG from "../public/icons/recoil.svg";
-import ReduxSVG from "../public/icons/redux.svg";
 import StyledComponentsSVG from "../public/icons/styled-components.svg";
-import TailwindCSSSVG from "../public/icons/tailwindCSS.svg";
 import SocketSVG from "../public/icons/socket.svg";
 
 interface DataItem {
@@ -33,26 +30,26 @@ interface DataById {
 }
 
 export const dataById: DataById = {
-  1: {
+  0: {
     title: "구름톤유니브2기 벚꽃톤 프로젝트",
     subTitle: "걱정이 일상을 방해하지 못하도록, 걱정보관함",
     tagList: ["웹개발", "PWA", "푸시알림", "배포"],
-    githubURL: "https://github.com/gkfla668/2024_BEOTKKOTTHON_TEAM_8_FE",
+    githubURL: "https://github.com/9oormthon-univ/2024_BEOTKKOTTHON_TEAM_8_FE",
     imgURL: WorryBox,
     overView:
       "구름에서 주관하는 IT 연합 동아리인 구름톤유니브 2기 벚꽃톤에 참여한 팀 프로젝트입니다. 해당 프로젝트의 슬로건은 '불쑥 찾아오는 걱정이 당신을 방해하지 못하도록.'이며, 걱정 시간을 설정하고 해당 걱정 시간에만 걱정을 마주하는 습관을 통해 현재에 집중하면서도 수많은 걱정에 건강하게 대처할 수 있도록 도와주는 서비스입니다. \n \n 10일 간의 한정된 시간 속에서 매일 밤 데일리스크럼 시간을 가졌습니다. 팀원들과 업무를 공유하고 협업하는 과정에서 꼭 필요한 업무만을 가지고 작업하는 방식을 통해 작업의 효율성을 경험하고 개발의 능률을 향상시킬 수 있었습니다. 또한 첫 해커톤과 첫 배포, 첫 PWA 적용 등 짧은 기간동안 너무나도 많은 것들을 배우고 경험한 뜻깊은 프로젝트입니다.",
     infoList: [
       "2024.03.13 ~ 2024.03.24",
       "기획 1, 디자이너 1, 프론트 2, 백 2",
-      "웹 프론트 개발, FCM 푸시알림 구현",
+      "웹 프론트 개발, PWA 적용, FCM 푸시알림 구현",
       [NextJSSVG, TypeScriptSVG, RecoilSVG, StyledComponentsSVG],
     ],
     pageList: [
       "가입/로그인",
-      "과거의내가",
-      "미래의나에게",
+      "과거의나로부터편지받기",
+      "미래의나에게편지쓰기",
       "걱정넣기",
-      "걱정레포트",
+      "걱정레포트보여주기",
     ],
     moreList: {
       "SSR 비활성화하여 react-wordcloud 라이브러리 통해 걱정 레포트 페이지 개발":
@@ -71,26 +68,10 @@ export const dataById: DataById = {
       ],
     },
   },
-  2: {
-    title: "2023 경기청년갭이어 프로그램",
-    subTitle: "창의적 학습 도구, 담담.",
-    tagList: ["웹개발", "반응형", "실시간채팅", "socket"],
-    githubURL: "https://github.com/freedamdam",
-    imgURL: Damdam,
-    overView:
-      "경기도에서 주관하는 2023 경기청년갭이어 프로그램에 참여하여 약 3개월 간 진행한 팀 프로젝트입니다. 학습부터 토의, 토론까지 체계적인 학습 및 실전 경험을 통해 정보 처리 능력, 창의적 사고 등의 역량을 갖추도록 돕는 서비스입니다.",
-    infoList: [
-      "2023.08 ~ 2023.11",
-      "기획 1, 프론트 1, 백 1",
-      "사이트 전반 프론트 개발 및 실시간 채팅 구현",
-      [NextJSSVG, TypeScriptSVG, ReduxSVG, StyledComponentsSVG, TailwindCSSSVG],
-    ],
-    pageList: ["가입/로그인", "메인페이지", "토론페이지"],
-  },
-  3: {
+  1: {
     title: "대학생 IT 연합동아리 UMC 하계 프로젝트",
     subTitle: "재고 관리의 모든 것, 스톡원큐.",
-    tagList: ["웹개발", "CRUD", "페이지네이션"],
+    tagList: ["웹개발", "페이지네이션"],
     githubURL: "https://github.com/stockOneQ",
     imgURL: StockOneQ,
     overView:
@@ -101,7 +82,12 @@ export const dataById: DataById = {
       "게시판 페이지 웹 프론트 개발",
       [NextJSSVG, TypeScriptSVG, RecoilSVG, StyledComponentsSVG],
     ],
-    pageList: ["게시판페이지"],
+    pageList: [
+      "게시글CRUD",
+      "게시글정렬및검색",
+      "댓글및대댓글CRUD",
+      "페이지네이션",
+    ],
     moreList: {
       "기획자 및 디자이너와의 첫 협업": [
         "저는 어떠한 일이라도 완벽하게 이해하고 넘어가려는 성향을 가지고 있습니다. 개발자라면 자신이 만드는 서비스에 대해 깊이 이해하고 숙지하는 것이 정말 중요하다고 생각하기 때문입니다. 그렇기에 기획자의 목적과 목표 그리고 비전을 명확히 이해할 때까지 왜 이 기능이 있어야 하는지 이 기능이 꼭 필요한지 끊임없이 질문하며 사용자의 요구와 비즈니스 목표를 만족시키기 위해 노력하였습니다. \n \n 디자이너와 협업함으로써, 디자이너가 바라보는 관점에서의 사용자 경험 디자인의 원리를 이해할 수 있었습니다. 협업 과정에서 서로의 작업 과정과 제약 사항을 이해하는 것은 팀 내 커뮤니케이션을 강화시켜 더 나은 의사결정을 하도록 도왔습니다. 각자 다른 시각에서 바라보며 기술적으로 해결할 수 없는 문제를 해결하고, 기술적인 가능성과 디자인적인 비전을 결합하여 사용자에게 긍정적인 경험을 제공할 수 있었습니다. \n \n 프론트엔드 개발자로서 단순히 기능 구현에만 책임을 가지는 것에 그치는 것이 아닌, 계속해서 질문하며 기획자와 디자이너의 의도를 파악하고 개선하며 사용성에 신경 쓰려 하였습니다.",
@@ -114,7 +100,7 @@ export const dataById: DataById = {
       ],
     },
   },
-  4: {
+  2: {
     title: "2023 하계 현장실습",
     subTitle: "(주)위드플러스 자체 플랫폼 교육 서비스, Live Pick",
     tagList: ["디자인", "웹개발", "socket"],
