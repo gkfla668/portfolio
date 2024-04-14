@@ -4,12 +4,18 @@ import Image from "next/image";
 import velogPNG from "/public/images/velog.png";
 import githubPNG from "/public/images/github.png";
 
-import Title from "@/components/common/SectionTitle";
 import HandleScroll from "@/utils/handleScroll";
 
 import * as S from "./styled";
 
-const Contact = () => {
+interface BlogPost {
+  title: string;
+  link: string;
+  contentSnippet?: string;
+}
+
+const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const [scroll, setScroll] = useState<boolean>(false);
   const threshold = 2400;
 
@@ -19,57 +25,81 @@ const Contact = () => {
     // 페이지 로드 시 현재 스크롤 위치 확인 및 scroll 상태 설정
     scrollHandler();
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // 초기에도 isMobile 상태를 설정
+
     window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("resize", handleResize); // 윈도우의 크기가 변경될 때마다 이를 업데이트
+
     return () => {
-      window.removeEventListener("scroll", scrollHandler); //clean up
+      window.removeEventListener("scroll", scrollHandler);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <div
       id="Contact"
-      className="relative min-h-screen w-full px-16 py-20 md:px-32"
+      className="relative flex h-full w-full items-center justify-center"
     >
       {scroll && (
-        <>
-          <Title title="Contact" />
-          <S.Text>
-            안녕하세요, 사용자의 경험을 우선시하는 프론트엔드 개발자입니다.
-          </S.Text>
-          <S.Text>
-            느리더라도 천천히, 포기하지 않는 개발자가 되기 위해 꾸준히 블로그를
-            운영하며 매 프로젝트마다 효율적으로 소통하며 개발하는 자세를 갖추려
-            하고 있습니다.
-          </S.Text>
-          <S.Text>
-            생각을 나누고, 지식을 공유하는 건강한 대화를 좋아합니다. <br />
-            언제든 편하게 연락주세요 :)
-          </S.Text>
-          <div className="absolute right-[3%] top-[65%] flex flex-col items-center justify-center p-4">
+        <div className="flex flex-col gap-[1.6rem] md:gap-[2.8rem]">
+          <S.PostContainer>
+            <S.PostList>
+              {latestPosts.map((post, index) => (
+                <S.PostItem key={index}>
+                  <S.PostLink
+                    href={post.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <S.PostTitle>{post.title}</S.PostTitle>
+                    <S.PostContent>
+                      {post.contentSnippet?.slice(0, 160) + "..."}
+                    </S.PostContent>
+                  </S.PostLink>
+                </S.PostItem>
+              ))}
+            </S.PostList>
+          </S.PostContainer>
+
+          <div className="flex w-full justify-between">
             <S.Wrapper>
-              <S.Container>
-                <S.Info>Phone</S.Info>
-                <S.Detail>010-6384-9653</S.Detail>
-              </S.Container>
-              <S.Container>
-                <S.Info>Email</S.Info>
-                <S.Detail>harim668@gmail.com</S.Detail>
-              </S.Container>
+              <div className="flex flex-col gap-[0.4rem] md:flex-row md:gap-[1.6rem]">
+                <S.Container>
+                  <S.Info>Phone</S.Info>
+                  <S.Detail>010-6384-9653</S.Detail>
+                </S.Container>
+                <S.Container>
+                  <S.Info>Email</S.Info>
+                  <S.Detail>harim668@gmail.com</S.Detail>
+                </S.Container>
+              </div>
+
+              <div className="flex flex-col items-center justify-center gap-[0.6rem] md:flex-row md:gap-[1.6rem]">
+                <S.Link href="https://github.com/gkfla668">
+                  <Image
+                    src={githubPNG}
+                    alt="github"
+                    width={isMobile ? 24 : 36}
+                  />
+                  <S.LinkTitle>Github</S.LinkTitle>
+                </S.Link>
+                <S.Link href="https://velog.io/@gkfla668">
+                  <Image
+                    src={velogPNG}
+                    alt="velog"
+                    width={isMobile ? 24 : 28}
+                  />
+                  <S.LinkTitle>Velog</S.LinkTitle>
+                </S.Link>
+              </div>
             </S.Wrapper>
-
-            <div className="flex gap-12 md:gap-20">
-              <S.Link href="https://github.com/gkfla668">
-                <Image src={githubPNG} alt="github" width={40} height={40} />{" "}
-                <S.LinkTitle>Github</S.LinkTitle>
-              </S.Link>
-
-              <S.Link href="https://velog.io/@gkfla668">
-                <Image src={velogPNG} alt="velog" width={36} height={36} />
-                <S.LinkTitle>Blog</S.LinkTitle>
-              </S.Link>
-            </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
