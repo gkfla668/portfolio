@@ -253,12 +253,12 @@ const Detail = () => {
                 >
                   깃허브 바로가기
                 </LinkStyled>
-                <LinkStyled
+                {/* <LinkStyled
                   href={dataById[parsedId].siteURL}
                   className="px-10 py-4"
                 >
                   사이트 바로가기
-                </LinkStyled>
+                </LinkStyled> */}
               </div>
               <Image
                 src={dataById[parsedId].imgURL}
@@ -375,12 +375,6 @@ const Detail = () => {
                   className="px-10 py-4"
                 >
                   깃허브 바로가기
-                </LinkStyled>
-                <LinkStyled
-                  href={dataById[parsedId].siteURL}
-                  className="px-10 py-4"
-                >
-                  사이트 바로가기
                 </LinkStyled>
               </div>
               <Image
