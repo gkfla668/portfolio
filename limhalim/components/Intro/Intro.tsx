@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { isHomeState } from "@/recoil/states";
 import { drift } from "@/styles/animation";
 import * as S from "./styles";
 import styled from "styled-components";
@@ -39,8 +37,6 @@ const Intro = () => {
   const [title, setTitle] = useState("");
   const [index, setIndex] = useState(0); // 현재 타이핑 한 글자의 index
 
-  const setIsHome = useSetRecoilState(isHomeState);
-
   useEffect(() => {
     if (typeof window !== "undefined")
       sessionStorage.removeItem("scrollPosition");
@@ -72,14 +68,14 @@ const Intro = () => {
   }, [index, completionWord]);
 
   return (
-    <S.Container className="relative flex min-h-screen w-full items-center justify-center">
+    <S.Container>
       <WaveCircle>
         <div></div>
         <div></div>
         <div></div>
       </WaveCircle>
 
-      <div className="relative flex min-h-screen w-full flex-col items-center justify-center ">
+      <div className="relative flex w-full flex-col items-center justify-center ">
         <S.Title>{title}</S.Title>
 
         {index === completionWord.length && (
