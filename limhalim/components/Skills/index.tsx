@@ -32,15 +32,12 @@ const Skills = () => {
   }, [scroll]);
 
   return (
-    <div
-      id="Skills"
-      className="flex min-h-screen w-full flex-col px-16 py-20 md:px-32"
-    >
+    <S.Container id="Skills">
       {scroll && (
         <>
           <Title title="Skills" />
-          <div className="relative flex h-full flex-1 flex-col items-center justify-center p-4">
-            <S.Wrapper>
+          <S.ContentBox>
+            <S.StackCircle>
               <S.Center>{stack}</S.Center>
               <S.OutCircle>
                 <S.Item onClick={() => setStack("React")}>
@@ -70,11 +67,11 @@ const Skills = () => {
                   <Image src={StyledComponentsSVG} alt="styled-components" />
                 </S.Item>
               </S.InCircle>
-            </S.Wrapper>
-          </div>
+            </S.StackCircle>
+          </S.ContentBox>
         </>
       )}
-    </div>
+    </S.Container>
   );
 };
 

@@ -1,6 +1,13 @@
 import { fade, fadeIn } from "@/styles/animation";
 import styled from "styled-components";
 
+export const ContentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Job = styled.div`
   font-size: 4.8rem;
   font-weight: 900;
@@ -130,7 +137,7 @@ export const Bar = styled.div`
   }
 `;
 
-export const ActivitiesWrapper = styled.div`
+export const ActivitiesContainer = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -156,7 +163,7 @@ export const ActivitiesWrapper = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const ActivityItem = styled.li`
   display: flex;
   align-items: center;
   gap: 1.6rem;
@@ -183,7 +190,7 @@ export const Date = styled.div`
   }
 `;
 
-export const DetailText = styled.p`
+export const Text = styled.p`
   color: white;
   font-size: 1.5rem;
   white-space: nowrap;

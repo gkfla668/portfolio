@@ -8,6 +8,15 @@ import {
 
 export const Container = styled.div`
   animation: ${fadeIn} 4s;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -49,8 +58,6 @@ export const Button = styled.div`
 `;
 
 export const MouseBox = styled.div`
-  margin-right: 4rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,11 +76,16 @@ export const Mouse = styled.div`
 
   border: 2px solid #fff;
   border-radius: 25px;
-  opacity: 0.75;
+  opacity: 0.5;
   box-sizing: content-box;
 
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 18px;
+  }
 `;
 
 export const Scroller = styled.div`
@@ -82,6 +94,11 @@ export const Scroller = styled.div`
   border-radius: 40%;
   background-color: #fff;
   animation: ${scrollFlash} 2s infinite;
+
+  @media (max-width: 768px) {
+    width: 4px;
+    height: 7px;
+  }
 `;
 
 export const H1 = styled.h1`
@@ -90,4 +107,10 @@ export const H1 = styled.h1`
 
   font-size: 1.4rem;
   white-space: nowrap;
+
+  opacity: 0.6;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;

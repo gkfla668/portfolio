@@ -5,6 +5,8 @@ import HandleScroll from "@/utils/handleScroll";
 
 import Slide from "@/components/Slide";
 
+import * as S from "./styles";
+
 const Projects = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const threshold = 1800;
@@ -22,19 +24,16 @@ const Projects = () => {
   }, []);
 
   return (
-    <div
-      id="Projects"
-      className="flex min-h-screen w-full flex-col px-16 py-20 md:px-32"
-    >
+    <S.Container id="Projects">
       {scroll && (
         <>
           <Title title="Projects" />
-          <div className="flex flex-1 flex-col items-center md:justify-center">
+          <S.ContentBox>
             <Slide />
-          </div>
+          </S.ContentBox>
         </>
       )}
-    </div>
+    </S.Container>
   );
 };
 

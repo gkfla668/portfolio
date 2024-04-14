@@ -6,11 +6,29 @@ import {
 } from "@/styles/animation";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  margin: 0px auto;
+export const Container = styled.div`
+  /* position: relative; */
+
+  height: 100%;
+`;
+
+export const ContentBox = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StackCircle = styled.div`
+  position: relative;
+
   width: 480px;
   height: 480px;
-  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   animation: ${fadeIn} 6s forwards;
 
