@@ -140,7 +140,7 @@ export const Bar = styled.div`
 export const ActivitiesContainer = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.4rem;
 
   @media (max-width: 768px) {
     gap: 0.8rem;

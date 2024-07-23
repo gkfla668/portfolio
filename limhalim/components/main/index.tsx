@@ -10,6 +10,7 @@ import HandleWheel from "@/utils/handleWheel";
 import * as S from "./styles";
 
 import Bubble from "../Bubble";
+import Title from "@/components/common/SectionTitle";
 
 interface BlogPost {
   title: string;
@@ -35,7 +36,7 @@ const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
   }, [scrollPosition]);
 
   return (
-    <S.Container className="relative flex min-h-screen w-full flex-col items-center justify-center">
+    <S.Container>
       <Bubble />
       <div className="z-10 flex w-full flex-col">
         {sections.map((section, index) => (
@@ -44,7 +45,12 @@ const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
             id={section}
             onWheel={e => HandleWheel(e, index, sections)}
           >
-            {getPageComponent(section, latestPosts)}
+            {section !== "Intro" && section !== "Contact" && (
+              <Title title={section} />
+            )}
+            <S.ContentBox>
+              {getPageComponent(section, latestPosts)}
+            </S.ContentBox>
           </S.PageContainerStyle>
         ))}
       </div>

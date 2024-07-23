@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-
-import Title from "@/components/common/SectionTitle";
 import HandleScroll from "@/utils/handleScroll";
 
 import Slide from "@/components/Slide";
@@ -26,12 +24,9 @@ const Projects = () => {
   return (
     <S.Container id="Projects">
       {scroll && (
-        <>
-          <Title title="Projects" />
-          <S.ContentBox>
-            <Slide />
-          </S.ContentBox>
-        </>
+        <S.ContentBox>
+          <Slide />
+        </S.ContentBox>
       )}
     </S.Container>
   );

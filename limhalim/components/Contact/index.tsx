@@ -46,7 +46,7 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
       className="relative flex h-full w-full items-center justify-center"
     >
       {scroll && (
-        <div className="flex flex-col gap-[1.6rem] md:gap-[2.8rem]">
+        <div className="flex flex-col gap-[1.6rem] md:gap-[3.6rem]">
           <S.PostContainer>
             <S.PostList>
               {latestPosts.map((post, index) => (

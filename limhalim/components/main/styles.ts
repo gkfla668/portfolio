@@ -30,18 +30,33 @@ export const WaveCircle = styled.span`
 `;
 
 export const Container = styled.div`
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   animation: ${fadeIn} 4s;
 `;
 
 export const PageContainerStyle = styled.div`
-  padding: 4.4rem 20rem;
-
+  padding: 6rem 18rem;
   height: 100vh;
-
   display: flex;
   flex-direction: column;
 
   @media (max-width: 768px) {
-    padding: 2.4rem 4rem;
+    padding: 2.8rem 3.2rem;
   }
+`;
+
+export const ContentBox = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;

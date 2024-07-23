@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-import Title from "@/components/common/SectionTitle";
 import HandleScroll from "@/utils/handleScroll";
 
 import ReactSVG from "../../public/icons/react_circle.png";
@@ -34,42 +32,39 @@ const Skills = () => {
   return (
     <S.Container id="Skills">
       {scroll && (
-        <>
-          <Title title="Skills" />
-          <S.ContentBox>
-            <S.StackCircle>
-              <S.Center>{stack}</S.Center>
-              <S.OutCircle>
-                <S.Item onClick={() => setStack("React")}>
-                  <Image src={ReactSVG} alt="react" />
-                </S.Item>
-                <S.Item onClick={() => setStack("NextJS")}>
-                  <Image src={NextJSSVG} alt="nextjs" />
-                </S.Item>
-                <S.Item onClick={() => setStack("JavaScript")}>
-                  <Image src={JavaScriptSVG} alt="javascript" />
-                </S.Item>
-                <S.Item onClick={() => setStack("TypeScript")}>
-                  <Image src={TypeScriptSVG} alt="typescript" />
-                </S.Item>
-              </S.OutCircle>
-              <S.InCircle>
-                <S.Item onClick={() => setStack("Recoil")}>
-                  <Image src={RecoilSVG} alt="recoil" />
-                </S.Item>
-                <S.Item onClick={() => setStack("Redux-toolkit")}>
-                  <Image src={ReduxSVG} alt="redux" />
-                </S.Item>
-                <S.Item onClick={() => setStack("TailwindCSS")}>
-                  <Image src={TailwindSVG} alt="tailwind" />
-                </S.Item>
-                <S.Item onClick={() => setStack("Styled-components")}>
-                  <Image src={StyledComponentsSVG} alt="styled-components" />
-                </S.Item>
-              </S.InCircle>
-            </S.StackCircle>
-          </S.ContentBox>
-        </>
+        <S.ContentBox>
+          <S.StackCircle>
+            <S.Center>{stack}</S.Center>
+            <S.OutCircle>
+              <S.Item onClick={() => setStack("React")}>
+                <Image src={ReactSVG} alt="react" />
+              </S.Item>
+              <S.Item onClick={() => setStack("NextJS")}>
+                <Image src={NextJSSVG} alt="nextjs" />
+              </S.Item>
+              <S.Item onClick={() => setStack("JavaScript")}>
+                <Image src={JavaScriptSVG} alt="javascript" />
+              </S.Item>
+              <S.Item onClick={() => setStack("TypeScript")}>
+                <Image src={TypeScriptSVG} alt="typescript" />
+              </S.Item>
+            </S.OutCircle>
+            <S.InCircle>
+              <S.Item onClick={() => setStack("Recoil")}>
+                <Image src={RecoilSVG} alt="recoil" />
+              </S.Item>
+              <S.Item onClick={() => setStack("Redux-toolkit")}>
+                <Image src={ReduxSVG} alt="redux" />
+              </S.Item>
+              <S.Item onClick={() => setStack("TailwindCSS")}>
+                <Image src={TailwindSVG} alt="tailwind" />
+              </S.Item>
+              <S.Item onClick={() => setStack("Styled-components")}>
+                <Image src={StyledComponentsSVG} alt="styled-components" />
+              </S.Item>
+            </S.InCircle>
+          </S.StackCircle>
+        </S.ContentBox>
       )}
     </S.Container>
   );
