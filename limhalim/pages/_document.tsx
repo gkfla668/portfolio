@@ -3,6 +3,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
+      <title>Limhalim Portfolio</title>
       <Head>
         {/** opengraph 설정 */}
         <meta property="og:title" content="Limhalim Portfolio" />
