@@ -18,24 +18,6 @@ export default function Document() {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-      {/* Preloading fonts */}
-      <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Noto+Sans+KR:wght@500&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-        as="style"
-      />
-      <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap"
-        as="style"
-      />
-      <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap"
-        as="style"
-      />
-
-      {/* Using font-display swap */}
       <link
         href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Noto+Sans+KR:wght@500&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
         rel="stylesheet"
@@ -44,12 +26,6 @@ export default function Document() {
         href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap"
         rel="stylesheet"
       />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
-
-      {/* Additional fonts from Naver */}
       <link
         href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
         rel="stylesheet"
