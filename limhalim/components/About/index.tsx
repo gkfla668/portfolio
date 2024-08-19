@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import HandleScroll from "@/utils/handleScroll";
 
-import Profile from "/public/images/profile.jpg";
+import Profile from "/public/images/profile.webp";
 
 import * as S from "./styled";
 
@@ -89,7 +89,7 @@ const About = () => {
                   src={Profile}
                   alt="img"
                   width={isMobile ? 160 : 200}
-                  loading="eager"
+                  loading="lazy"
                   className="rounded-md"
                 />
               </S.ProfileImageWrapper>
@@ -129,7 +129,7 @@ const About = () => {
                   src={Profile}
                   alt="img"
                   width={300}
-                  loading="eager"
+                  loading="lazy"
                   className="rounded-xl"
                   unoptimized
                 />

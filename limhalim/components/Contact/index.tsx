@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import velogPNG from "/public/images/velog.png";
-import githubPNG from "/public/images/github.png";
+import velogPNG from "/public/icons/velog.webp";
+import githubPNG from "/public/icons/github.webp";
 
 import HandleScroll from "@/utils/handleScroll";
 
@@ -85,6 +85,7 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
                     src={githubPNG}
                     alt="github"
                     width={isMobile ? 24 : 36}
+                    loading="lazy"
                   />
                   <S.LinkTitle>Github</S.LinkTitle>
                 </S.Link>
@@ -93,6 +94,7 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
                     src={velogPNG}
                     alt="velog"
                     width={isMobile ? 24 : 28}
+                    loading="lazy"
                   />
                   <S.LinkTitle>Velog</S.LinkTitle>
                 </S.Link>

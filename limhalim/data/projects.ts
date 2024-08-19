@@ -1,16 +1,16 @@
 import { StaticImageData } from "next/image";
 
-import WorryBox from "../public/images/worry-box.png";
-import StockOneQ from "../public/images/StockOneQ.png";
-import LivePick from "../public/images/LivePick.png";
+import WorryBox from "../public/images/worry-box.webp";
+import StockOneQ from "../public/images/StockOneQ.webp";
+import LivePick from "../public/images/LivePick.webp";
 
-import NextJSSVG from "../public/icons/nextjs.svg";
-import ReactSVG from "../public/icons/react.svg";
-import JavaScriptSVG from "../public/icons/javascript.svg";
-import TypeScriptSVG from "../public/icons/typescript.svg";
-import RecoilSVG from "../public/icons/recoil.svg";
-import StyledComponentsSVG from "../public/icons/styled-components.svg";
-import SocketSVG from "../public/icons/socket.svg";
+import NextJSSVG from "../public/icons/nextjs.webp";
+import ReactSVG from "../public/icons/react.webp";
+import JavaScriptSVG from "../public/icons/javascript.webp";
+import TypeScriptSVG from "../public/icons/typescript.webp";
+import RecoilSVG from "../public/icons/recoil.webp";
+import StyledComponentsSVG from "../public/icons/styled-components.webp";
+import SocketSVG from "../public/icons/socket.webp";
 
 interface DataItem {
   title: string;

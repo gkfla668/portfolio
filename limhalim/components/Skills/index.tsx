@@ -37,30 +37,34 @@ const Skills = () => {
             <S.Center>{stack}</S.Center>
             <S.OutCircle>
               <S.Item onClick={() => setStack("React")}>
-                <Image src={ReactSVG} alt="react" />
+                <Image src={ReactSVG} alt="react" loading="lazy" />
               </S.Item>
               <S.Item onClick={() => setStack("NextJS")}>
-                <Image src={NextJSSVG} alt="nextjs" />
+                <Image src={NextJSSVG} alt="nextjs" loading="lazy" />
               </S.Item>
               <S.Item onClick={() => setStack("JavaScript")}>
-                <Image src={JavaScriptSVG} alt="javascript" />
+                <Image src={JavaScriptSVG} alt="javascript" loading="lazy" />
               </S.Item>
               <S.Item onClick={() => setStack("TypeScript")}>
-                <Image src={TypeScriptSVG} alt="typescript" />
+                <Image src={TypeScriptSVG} alt="typescript" loading="lazy" />
               </S.Item>
             </S.OutCircle>
             <S.InCircle>
               <S.Item onClick={() => setStack("Recoil")}>
-                <Image src={RecoilSVG} alt="recoil" />
+                <Image src={RecoilSVG} alt="recoil" loading="lazy" />
               </S.Item>
               <S.Item onClick={() => setStack("Redux-toolkit")}>
-                <Image src={ReduxSVG} alt="redux" />
+                <Image src={ReduxSVG} alt="redux" loading="lazy" />
               </S.Item>
               <S.Item onClick={() => setStack("TailwindCSS")}>
-                <Image src={TailwindSVG} alt="tailwind" />
+                <Image src={TailwindSVG} alt="tailwind" loading="lazy" />
               </S.Item>
               <S.Item onClick={() => setStack("Styled-components")}>
-                <Image src={StyledComponentsSVG} alt="styled-components" />
+                <Image
+                  src={StyledComponentsSVG}
+                  alt="styled-components"
+                  loading="lazy"
+                />
               </S.Item>
             </S.InCircle>
           </S.StackCircle>

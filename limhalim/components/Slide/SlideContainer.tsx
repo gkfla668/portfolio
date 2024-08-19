@@ -32,6 +32,7 @@ const SlideContainer = (props: SlideProps) => {
             alt="img"
             width={isMobile ? 400 : 1400}
             className="rounded-xl"
+            loading="lazy"
           />
         </S.ImageWrapper>
 
