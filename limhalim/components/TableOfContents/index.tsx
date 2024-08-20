@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 import Menu from "@/components/common/Menu";
-
-import HomeSVG from "/public/icons/home.svg";
 
 import * as S from "./styled";
 import WaveAnimation from "../WaveAnimation";
@@ -52,12 +49,6 @@ const Contents = () => {
       className="z-10 flex min-h-screen w-full items-center justify-center bg-[#42d17ed8] px-60"
     >
       <WaveAnimation />
-
-      {!isMobile && (
-        <S.IconWrapper>
-          <Image src={HomeSVG} alt="home" width={30} height={30} />
-        </S.IconWrapper>
-      )}
 
       {isMobile ? (
         <div className="flex w-full">
