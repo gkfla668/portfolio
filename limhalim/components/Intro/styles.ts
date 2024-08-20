@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import {
-  neonFlash,
-  fadeIn,
-  flashAndSlide,
-  scrollFlash,
-} from "@/styles/animation";
+import { fadeIn, flashAndSlide, scrollFlash } from "@/styles/animation";
 
 export const Container = styled.div`
   animation: ${fadeIn} 4s;
@@ -27,10 +22,13 @@ export const Title = styled.h1`
   letter-spacing: 0.4rem;
   white-space: nowrap;
 
-  animation: ${neonFlash} 8s infinite;
+  text-shadow:
+    0 0 2px #eee,
+    0 0 3px #42d17d,
+    0 0 4px #42d17d;
 
   @media (max-width: 768px) {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
   }
 `;
 

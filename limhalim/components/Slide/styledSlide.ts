@@ -11,7 +11,7 @@ export const Container = styled.div`
   animation: ${fadeIn} 6s forwards;
 
   @media (max-width: 768px) {
-    padding: 2.8rem 0 1.6rem 0;
+    padding: 0;
   }
 `;
 
@@ -26,9 +26,8 @@ export const Content = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    width: auto;
-    gap: 2rem;
-    height: auto;
+    height: 100%;
+    gap: 0;
   }
 `;
 
@@ -51,7 +50,7 @@ export const Title = styled.h1`
   line-height: 3.6rem;
 
   @media (max-width: 768px) {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 `;
 
@@ -65,7 +64,8 @@ export const SubTitle = styled.h2`
   letter-spacing: 0rem;
 
   @media (max-width: 768px) {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 `;
 
@@ -76,7 +76,7 @@ export const TagList = styled.ul`
   margin-top: 1.6rem;
 
   @media (max-width: 768px) {
-    gap: 0.4rem;
+    gap: 0.2rem;
   }
 `;
 

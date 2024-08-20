@@ -33,8 +33,8 @@ export const StackCircle = styled.div`
   animation: ${fadeIn} 6s forwards;
 
   @media (max-width: 768px) {
-    width: 340px;
-    height: 340px;
+    width: 240px;
+    height: 240px;
   }
 `;
 
@@ -91,6 +91,10 @@ export const Item = styled.div`
     margin: 0px auto;
     width: 84%;
     animation: ${RotateReverse} 32s linear infinite;
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
   }
 
   &:hover {
@@ -98,8 +102,8 @@ export const Item = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 56px;
-    height: 56px;
+    width: 40px;
+    height: 40px;
   }
 `;
 

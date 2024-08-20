@@ -29,6 +29,24 @@ const WaveCircle = styled.span`
   :nth-child(3) {
     animation: ${drift} 16s infinite linear;
   }
+
+  @media (max-width: 768px) {
+    div {
+      opacity: 0.2;
+      position: absolute;
+      top: 5%;
+      left: 80%;
+
+      background: #42d17e53;
+      width: 300px;
+      height: 300px;
+
+      margin-left: -250px;
+      margin-top: -250px;
+      transform-origin: 50% 50%;
+      border-radius: 40%;
+    }
+  }
 `;
 
 const Intro = () => {
