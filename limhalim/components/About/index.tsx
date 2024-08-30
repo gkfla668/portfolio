@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import HandleScroll from "@/utils/handleScroll";
 
-import Profile from "/public/images/profile.webp";
+import Profile from "/public/images/profile.jpg";
 
 import * as S from "./styled";
 
@@ -96,7 +96,7 @@ const About = () => {
               <S.ActivitiesContainer>
                 <S.ActivityItem>
                   <S.Date>2024.02-2024.08</S.Date>
-                  <S.Text>구름톤 유니브 2기, Web 파트 활동 중</S.Text>
+                  <S.Text>구름톤 유니브 2기, Web 파트 수료</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.08-2023.11</S.Date>
@@ -144,7 +144,7 @@ const About = () => {
                     >
                       구름톤 유니브
                     </a>
-                    2기, Web 파트 활동 중
+                    2기, Web 파트 수료
                   </S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
