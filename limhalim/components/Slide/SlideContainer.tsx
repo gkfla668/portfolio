@@ -1,23 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import * as S from "./styledSlide";
 import { SlideProps } from "@/types/global";
 
 const SlideContainer = (props: SlideProps) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize(); // 초기에도 isMobile 상태를 설정
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const handleDetailNavigation = () => {
     if (typeof window !== "undefined")
       sessionStorage.setItem("scrollPosition", window.scrollY.toString());
