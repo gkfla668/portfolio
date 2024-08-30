@@ -58,7 +58,9 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
                   >
                     <S.PostTitle>{post.title}</S.PostTitle>
                     <S.PostContent>
-                      {post.contentSnippet?.slice(0, 160) + "..."}
+                      {isMobile
+                        ? post.contentSnippet?.slice(0, 100) + "..."
+                        : post.contentSnippet?.slice(0, 160) + "..."}
                     </S.PostContent>
                   </S.PostLink>
                 </S.PostItem>
@@ -79,7 +81,7 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
                 </S.Container>
               </div>
 
-              <div className="flex flex-col items-center justify-center gap-[0.6rem] md:flex-row md:gap-[1.6rem]">
+              <div className="flex flex-col items-center justify-center gap-[1rem] md:flex-row md:gap-[1.6rem]">
                 <S.Link href="https://github.com/gkfla668">
                   <Image
                     src={githubPNG}

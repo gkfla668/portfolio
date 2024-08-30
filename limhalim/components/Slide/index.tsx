@@ -18,20 +18,18 @@ const Slide = () => {
   };
 
   return (
-    <>
-      <Slider {...settings} className="mx-20 w-[112rem]">
-        {Object.values(dataById).map((item, index) => (
-          <SlideContainer
-            key={index}
-            index={index}
-            imgURL={item.imgURL}
-            title={item.title}
-            subTitle={item.subTitle}
-            tagList={item.tagList}
-          />
-        ))}
-      </Slider>
-    </>
+    <Slider {...settings} className="w-full">
+      {Object.values(dataById).map((item, index) => (
+        <SlideContainer
+          key={index}
+          index={index}
+          imgURL={item.imgURL}
+          title={item.title}
+          subTitle={item.subTitle}
+          tagList={item.tagList}
+        />
+      ))}
+    </Slider>
   );
 };
 

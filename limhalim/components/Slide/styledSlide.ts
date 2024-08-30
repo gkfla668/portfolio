@@ -2,7 +2,7 @@ import { fadeIn } from "@/styles/animation";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 7.2rem 6.4rem;
+  padding: 7.2rem 3rem;
 
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   animation: ${fadeIn} 6s forwards;
 
   @media (max-width: 768px) {
-    padding: 0;
+    padding: 2.4rem 1.6rem;
   }
 `;
 
@@ -51,6 +51,7 @@ export const Title = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 2rem;
+    line-height: 2.8rem;
   }
 `;
 
@@ -95,7 +96,8 @@ export const TagItem = styled.li`
   white-space: nowrap;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
   }
 `;
 

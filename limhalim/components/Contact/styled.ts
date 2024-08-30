@@ -29,7 +29,7 @@ export const PostItem = styled.li`
   border-bottom: 0.05rem solid #828282;
 
   @media (max-width: 768px) {
-    padding-bottom: 2.4rem;
+    padding-bottom: 1.6rem;
   }
 `;
 
@@ -53,7 +53,7 @@ export const PostTitle = styled.div`
   font-size: 2.4rem;
 
   @media (max-width: 768px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -68,7 +68,7 @@ export const PostContent = styled.div`
   gap: 0.8rem;
 
   @media (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 `;
 
