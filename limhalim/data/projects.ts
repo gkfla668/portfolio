@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 
+import Readyou from "../public/images/readyou.png";
 import WorryBox from "../public/images/worry-box.webp";
 import StockOneQ from "../public/images/StockOneQ.webp";
 import LivePick from "../public/images/LivePick.webp";
@@ -12,7 +13,7 @@ import RecoilSVG from "../public/icons/recoil.webp";
 import StyledComponentsSVG from "../public/icons/styled-components.webp";
 import SocketSVG from "../public/icons/socket.webp";
 
-interface DataItem {
+interface ProjectItem {
   title: string;
   subTitle: string;
   tagList: string[];
@@ -21,19 +22,59 @@ interface DataItem {
   imgURL: StaticImageData;
   overView: string;
   infoList: [string, string, string, StaticImageData[]];
-  pageList: string[];
+  whatDidIdo: string[];
   moreList?: { [key: string]: [string, string?] };
 }
 
-interface DataById {
-  [key: string]: DataItem;
+interface ProjectById {
+  [key: string]: ProjectItem;
 }
 
-export const dataById: DataById = {
+export const dataById: ProjectById = {
   0: {
+    title: "테오의스프린트17기, READYOU",
+    subTitle: "10분 README 완성!, READYOU",
+    tagList: ["웹개발", "반응형", "드래그앤드롭"],
+    githubURL: "https://github.com/Read-U/readyou-front",
+    siteURL: "https://readyou.vercel.app/",
+    imgURL: Readyou,
+    overView:
+      "협업 프로세스를 경험하는 테오의 스프린트 17기에 FE 개발자로 참여하여 단기간으로 진행한 팀 프로젝트입니다. READYOU는 README 파일에 추가할 항목을 선택하여 내용을 기입하면 자동으로 마크 다운을 작성해주는 서비스입니다.",
+    infoList: [
+      "2024.04",
+      "디자이너 1, 프론트 5, 백 1",
+      "웹 프론트 개발, 드래그 앤 드롭 구현, 사용자 input 마크다운으로 가공, 프리뷰 동기화",
+      [NextJSSVG, TypeScriptSVG, RecoilSVG, StyledComponentsSVG],
+    ],
+    whatDidIdo: [
+      "프로젝트 리더",
+      "반응형 적용",
+      "드래그 앤 드롭 구현",
+      "사용자 input 가공",
+      "프리뷰 동기화",
+    ],
+    moreList: {
+      "PC와 모바일에서 동작하는 반응형 웹 구현": [
+        "사용자가 모바일 환경에서도 동일하게 사용할 수 있도록 CSS의 미디어 쿼리를 이용하여 반응형을 추가로 구현하였습니다.",
+      ],
+      "드래그 앤 드롭 기능 구현": [
+        "react-beautiful-dnd 라이브러리를 활용하여 드래그 앤 드롭 기능을 구현하였습니다. 이를 통해 사용자는 리드미에 추가 될 각 요소를 손쉽게 이동할 수 있게 되었습니다. 특히, 요소 간의 자연스러운 이동과 배치 변경을 위해 드래그 앤 드롭 동작의 시각적 피드백에 신경 썼습니다.",
+      ],
+      "공통 컴포넌트 처리": [
+        "드래그 앤 드롭 대상 요소들을 보다 효율적으로 관리하기 위해 각 요소를 공통 컴포넌트화하였습니다. 이를 통해 중복 코드를 줄이고, 유지보수성을 높였습니다. 다양한 타입의 요소들을 하나의 컴포넌트로 관리하면서도 각 요소의 특성에 맞는 동작을 할 수 있도록 유연한 컴포넌트 구조를 설계하였습니다.",
+      ],
+      "사용자 입력 처리 및 프리뷰 동기화": [
+        "사용자가 입력한 내용을 실시간으로 마크다운(Markdown) 형식으로 변환하여 프리뷰 섹션에 동기화하는 기능을 구현하였습니다. 사용자가 입력한 텍스트가 프리뷰 섹션에 즉시 반영될 수 있도록 최적화하여 사용자 경험을 향상시켰습니다. 이를 위해 useMemo와 같은 최적화 기법을 사용하여 변경되지 않은 부분은 재렌더링하지 않도록 함으로써 성능을 최적화하였습니다.",
+      ],
+      "Recoil을 활용한 상태 관리": [
+        "드래그 앤 드롭뿐만 아니라 요소의 추가, 삭제, 이동 등에 의해 발생하는 상태 변화를 보다 효율적으로 관리하기 위해 Recoil 상태 관리 라이브러리를 도입하였습니다. Recoil을 통해 복잡한 상태 변화와 관련된 로직을 간결하게 처리할 수 있었고, 이는 전체 애플리케이션의 반응성을 높이는 데 크게 기여하였습니다.",
+      ],
+    },
+  },
+  1: {
     title: "구름톤유니브2기 벚꽃톤 프로젝트",
     subTitle: "걱정이 일상을 방해하지 못하도록, 걱정보관함",
-    tagList: ["웹개발", "PWA", "푸시알림", "배포"],
+    tagList: ["웹개발", "PWA", "푸시알림"],
     githubURL: "https://github.com/9oormthon-univ/2024_BEOTKKOTTHON_TEAM_8_FE",
     imgURL: WorryBox,
     overView:
@@ -44,7 +85,7 @@ export const dataById: DataById = {
       "웹 프론트 개발, PWA 적용, FCM 푸시알림 구현",
       [NextJSSVG, TypeScriptSVG, RecoilSVG, StyledComponentsSVG],
     ],
-    pageList: [
+    whatDidIdo: [
       "가입/로그인",
       "과거의나로부터편지받기",
       "미래의나에게편지쓰기",
@@ -54,24 +95,24 @@ export const dataById: DataById = {
     moreList: {
       "SSR 비활성화하여 react-wordcloud 라이브러리 통해 걱정 레포트 페이지 개발":
         [
-          "브라우저 전용 API 및 DOM 조작이 필요한 라이브러리인 react-wordcloud는 컴포넌트를 클라이어트 사이드에서만 렌더링하기 때문에 서버 사이드 렌더링 시점에 사용하려고 할 때 문제가 발생하는 것을 확인했습니다. 따라서, 'next/dynamic'을 사용하여 서버 사이드 렌더링을 비활성화 하여 우회하고 클라이언트 사이드에서만 컴포넌트를 불러오도록 문제를 해결하였습니다.",
+          "브라우저 전용 API 및 DOM 조작이 필요한 라이브러리인 react-wordcloud는 컴포넌트를 클라이어트 사이드에서만 렌더링하기 때문에 서버 사이드 렌더링 시점에 사용하려고 할 때 문제가 발생하는 것을 확인했습니다. 따라서, 'next/dynamic'을 사용하여 서버 사이드 렌더링을 비활성화 하여 우회하고 클라이언트 사이드에서만 컴포넌트를 동적으로 불러오도록 하여 문제를 해결하였습니다.",
         ],
       "PWA 적용": [
-        "웹/앱 종류 중 하나인 PWA 기술을 도입하였습니다. 모바일에서 홈화면 바로가기 추가로 네이티브 앱과 유사한 형태로 제공하여 사용성을 높이고자 하였습니다.",
+        "웹/앱 종류 중 하나인 PWA 기술을 도입하였습니다. 모바일 사용자가 홈화면에 바로가기 형태로 웹 사이트를 추가할 수 있게 하여 네이티브 앱과 유사한 형태로 제공하여 사용성을 높이고자 하였습니다.",
       ],
       "Firebase Cloud Messaging(FCM)을 사용한 웹에서의 푸시알림 구현": [
         "서비스 워커를 등록하여 백그라운드 메시징 서비스를 통해 사용자가 앱에 접속하지 않아도 오프라인 상태에서 푸시 알림을 제공하고자 하였습니다. \n \n 1. 사용자의 브라우저에서 Notification.requestPermission()을 통해 푸시 알림 권한 요청 \n 2. 메시징 서비스 getToken()를 통해 vapidKey를 발급 받아서 현재 사용자 디바이스의 FCM 등록 토큰을 얻는다. 이후 해당 토큰을 서버의 특정 엔드포인트로 POST 요청을 보내 토큰을 등록한다. \n 3. 백그라운드에서의 메세지 수신을 위한 서비스워커 등록 \n 4. 메시징 서비스 onBackgroundMessage()를 통해 백그라운드 상태에서 FCM에서 보낸 푸시 알림 메시지를 실시간으로 수신한다.",
       ],
       "새로고침 시 전역 상태가 초기화 되는 현상 해결": [
-        "Recoil로 관리하는 상태는 클라이언트 사이드에서만 유지되므로 페이지를 새로고침하면 서버 측에서 초기 상태를 가져와 다시 렌더링하기 때문에 recoil 상태가 초기화되는 것을 알 수 있었습니다. 이에 따라 recoil-persist 라이브러리를 통해 sesstionStorage 웹 스토리지를 사용하고자 하였습니다. \n  하지만, 서버 사이드 렌더링 환경에서는 window 객체가 정의되어 있지 않기 때문에 서버 사이드 페이지가 클라이언트에 로드될 때 까지 sessionStorage에 접근이 불가능하였습니다. 따라서 아래 코드를 추가하여 sessionStorage를 사용하였고, 새로고침 시 전역 상태가 초기화 되는 문제를 해결할 수 있었습니다.",
+        "Recoil로 관리하는 상태는 클라이언트 사이드에서만 유지되므로 페이지를 새로고침하면 서버 측에서 초기 상태를 가져와 다시 렌더링하기 때문에 recoil 상태가 초기화되는 것을 알 수 있었습니다. 이를 해결하기 위해 recoil-persist 라이브러리를 사용하여 sesstionStorage 웹 스토리지를 사용하고자 하였습니다. \n  하지만, 서버 사이드 렌더링 환경에서는 window 객체가 정의되어 있지 않기 때문에 서버 사이드 페이지가 클라이언트에 로드될 때 까지 sessionStorage에 접근이 불가능하였습니다. 따라서, 아래 코드를 추가하여 sessionStorage를 사용하였고, 새로고침 시 전역 상태가 초기화 되는 문제를 해결할 수 있었습니다.",
         "const sessionStorage = typeof window !== 'undefined' ? window.sessionStorage : undefined;",
       ],
     },
   },
-  1: {
-    title: "대학생 IT 연합동아리 UMC 하계 프로젝트",
-    subTitle: "재고 관리의 모든 것, 스톡원큐.",
-    tagList: ["웹개발", "페이지네이션"],
+  2: {
+    title: "IT연합동아리UMC 하계 프로젝트",
+    subTitle: "재고 관리의 모든 것, 스톡원큐",
+    tagList: ["웹개발", "페이지네이션", "CRUD"],
     githubURL: "https://github.com/stockOneQ",
     imgURL: StockOneQ,
     overView:
@@ -82,7 +123,7 @@ export const dataById: DataById = {
       "게시판 페이지 웹 프론트 개발",
       [NextJSSVG, TypeScriptSVG, RecoilSVG, StyledComponentsSVG],
     ],
-    pageList: [
+    whatDidIdo: [
       "게시글CRUD",
       "게시글정렬및검색",
       "댓글및대댓글CRUD",
@@ -100,10 +141,10 @@ export const dataById: DataById = {
       ],
     },
   },
-  2: {
-    title: "2023 하계 현장실습",
+  3: {
+    title: "2023 하계 인턴",
     subTitle: "(주)위드플러스 자체 플랫폼 교육 서비스, Live Pick",
-    tagList: ["디자인", "웹개발", "socket"],
+    tagList: ["기획", "디자인", "웹개발", "socket통신"],
     siteURL: "https://www.withplus.live/content/pick",
     imgURL: LivePick,
     overView:
@@ -114,6 +155,6 @@ export const dataById: DataById = {
       "모바일 사용자 접속자 관리를 위한 매니저 페이지 전반 프론트 개발 및 socket 통신",
       [ReactSVG, JavaScriptSVG, SocketSVG, StyledComponentsSVG],
     ],
-    pageList: ["PC매니저페이지"],
+    whatDidIdo: ["PC매니저페이지"],
   },
 };

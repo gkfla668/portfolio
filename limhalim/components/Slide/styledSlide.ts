@@ -9,35 +9,39 @@ export const Container = styled.div`
   align-items: center;
 
   animation: ${fadeIn} 6s forwards;
-
+  overflow: hidden;
   @media (max-width: 768px) {
     padding: 2.4rem 1.6rem;
   }
 `;
 
-export const Content = styled.div`
-  width: 100%;
-  height: 28rem;
+export const ImageWrapper = styled.div`
+  width: 120rem;
+  max-width: 120rem;
+  min-width: 20rem;
+  height: auto;
+  margin-right: 2rem;
 
+  @media (max-width: 768px) {
+    width: 40rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const Content = styled.div`
+  height: 28rem;
   display: flex;
   align-items: start;
-
   gap: 5.2rem;
+  overflow: hidden; /* 컨텐츠 넘침 방지 */
 
   @media (max-width: 768px) {
     flex-direction: column;
     height: 100%;
     gap: 0;
-  }
-`;
-
-export const ImageWrapper = styled.div`
-  @media (max-width: 768px) {
-    height: 24rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
@@ -50,7 +54,7 @@ export const Title = styled.h1`
   line-height: 3.6rem;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.2rem;
     line-height: 2.8rem;
   }
 `;

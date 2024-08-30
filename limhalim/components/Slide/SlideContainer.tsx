@@ -27,13 +27,7 @@ const SlideContainer = (props: SlideProps) => {
     <S.Container>
       <S.Content>
         <S.ImageWrapper>
-          <Image
-            src={props.imgURL}
-            alt="img"
-            width={isMobile ? 400 : 1400}
-            className="rounded-xl"
-            loading="lazy"
-          />
+          <Image src={props.imgURL} alt="img" className="w-full rounded-xl" />
         </S.ImageWrapper>
 
         <div className="flex h-full w-full flex-col justify-between">
