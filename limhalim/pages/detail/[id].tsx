@@ -12,7 +12,6 @@ const Title = styled.div`
   font-weight: 900;
   color: White;
   font-size: 3.6rem;
-  white-space: nowrap;
 
   @media (max-width: 768px) {
     font-size: 2.8rem;
@@ -33,6 +32,7 @@ const SubTitle = styled.div`
 
 const TagList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 
   @media (max-width: 768px) {
@@ -144,10 +144,9 @@ const InfoText = styled.div`
   font-size: 1.4rem;
 
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   gap: 0.4rem;
-
-  white-space: nowrap;
 
   @media (max-width: 768px) {
     font-size: 1.3rem;
@@ -253,17 +252,20 @@ const Detail = () => {
                 >
                   깃허브 바로가기
                 </LinkStyled>
-                {/* <LinkStyled
-                  href={dataById[parsedId].siteURL}
-                  className="px-10 py-4"
-                >
-                  사이트 바로가기
-                </LinkStyled> */}
+                {dataById[parsedId].siteURL && (
+                  <LinkStyled
+                    href={dataById[parsedId].siteURL}
+                    className="px-10 py-4"
+                  >
+                    사이트 바로가기
+                  </LinkStyled>
+                )}
               </div>
               <Image
                 src={dataById[parsedId].imgURL}
                 alt="image"
                 className="rounded-xl"
+                loading="lazy"
               />
             </div>
 
@@ -298,6 +300,7 @@ const Detail = () => {
                         src={item}
                         alt="stack"
                         className="rounded-xl"
+                        loading="lazy"
                       />
                     ))}
                   </InfoText>
@@ -310,7 +313,7 @@ const Detail = () => {
               <SubText>What did I do.</SubText>
               <div className="ml-2">
                 <TagList>
-                  {dataById[parsedId].pageList.map((item, index) => (
+                  {dataById[parsedId].whatDidIdo.map((item, index) => (
                     <TagItem key={index}>{`#${item}`}</TagItem>
                   ))}
                 </TagList>
@@ -352,7 +355,7 @@ const Detail = () => {
         </div>
       ) : (
         <div className="w-[46%]">
-          <div className="flex w-full flex-col items-center justify-center gap-16">
+          <div className="flex w-full flex-col items-center justify-center gap-20">
             {/** Title */}
             <div className="flex w-full flex-col gap-5">
               <div>
@@ -369,18 +372,27 @@ const Detail = () => {
 
             {/** Image */}
             <div className="flex flex-col gap-10">
-              <div className="mt-16 flex w-full items-center justify-center gap-4">
+              <div className="flex w-full items-center justify-center gap-4">
                 <LinkStyled
                   href={dataById[parsedId].githubURL}
                   className="px-10 py-4"
                 >
                   깃허브 바로가기
                 </LinkStyled>
+                {dataById[parsedId].siteURL && (
+                  <LinkStyled
+                    href={dataById[parsedId].siteURL}
+                    className="px-10 py-4"
+                  >
+                    사이트 바로가기
+                  </LinkStyled>
+                )}
               </div>
               <Image
                 src={dataById[parsedId].imgURL}
                 alt="image"
                 className="rounded-xl"
+                loading="lazy"
               />
             </div>
 
@@ -422,6 +434,7 @@ const Detail = () => {
                         src={item}
                         alt="stack"
                         className="rounded-xl"
+                        loading="lazy"
                       />
                     ))}
                   </InfoText>
@@ -434,7 +447,7 @@ const Detail = () => {
               <SubText>What did I do.</SubText>
               <div className="ml-4">
                 <TagList>
-                  {dataById[parsedId].pageList.map((item, index) => (
+                  {dataById[parsedId].whatDidIdo.map((item, index) => (
                     <TagItem key={index}>{`#${item}`}</TagItem>
                   ))}
                 </TagList>

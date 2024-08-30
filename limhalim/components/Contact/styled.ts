@@ -173,6 +173,8 @@ export const Detail = styled.p`
   display: flex;
   gap: 0.4rem;
 
+  white-space: nowrap;
+
   @media (max-width: 768px) {
     font-size: 1.1rem;
   }
@@ -184,6 +186,7 @@ export const LinkTitle = styled.div`
   font-weight: 900;
   letter-spacing: 0.1rem;
   text-align: center;
+  white-space: nowrap;
 
   animation: ${fadeIn} 8s;
 
@@ -199,6 +202,7 @@ export const Link = styled.a`
   align-items: center;
 
   opacity: 0.8;
+  white-space: nowrap;
 
   &:hover {
     opacity: 1;

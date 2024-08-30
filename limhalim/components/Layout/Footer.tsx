@@ -22,7 +22,6 @@ const Title = styled.h1`
   font-family: NanumSquareBold;
   font-size: 1.4rem;
   color: white;
-  white-space: nowrap;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;

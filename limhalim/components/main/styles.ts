@@ -37,6 +37,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #272727;
 
   animation: ${fadeIn} 4s;
 `;
