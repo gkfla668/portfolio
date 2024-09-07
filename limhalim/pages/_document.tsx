@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <title>Limhalim Portfolio</title>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/** opengraph 설정 */}
         <meta property="og:title" content="Limhalim Portfolio" />
         <meta
