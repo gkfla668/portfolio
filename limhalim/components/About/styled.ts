@@ -124,11 +124,11 @@ export const Birth = styled.p`
 
 export const Bar = styled.div`
   border: 1.6px solid #eeeeee53;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   opacity: 0;
 
   width: 28rem;
-  height: 0.6rem;
+  height: 0.5rem;
   animation: ${fade} 12s forwards;
 
   @media (max-width: 768px) {

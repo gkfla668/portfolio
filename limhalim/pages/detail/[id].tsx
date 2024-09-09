@@ -1,210 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 import { dataById } from "@/data/projects";
 import Bubble from "@/components/Bubble";
-import { useEffect, useState } from "react";
 
-import styled from "styled-components";
-
-const Title = styled.div`
-  font-weight: 900;
-  color: White;
-  font-size: 3.6rem;
-
-  @media (max-width: 768px) {
-    font-size: 2.8rem;
-  }
-`;
-
-const SubTitle = styled.div`
-  font-weight: 900;
-  color: White;
-  opacity: 0.6;
-  font-size: 2rem;
-
-  @media (max-width: 768px) {
-    font-weight: 500;
-    font-size: 1.7rem;
-  }
-`;
-
-const TagList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-
-  @media (max-width: 768px) {
-    gap: 0.4rem;
-  }
-`;
-
-const TagItem = styled.li`
-  border-radius: 2rem;
-  border: 1px solid #42d17d;
-
-  padding: 0.6rem 1.6rem;
-
-  color: #42d17d;
-  font-size: 1.2rem;
-  font-weight: 600;
-
-  letter-spacing: 0.1rem;
-
-  white-space: nowrap;
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-    padding: 0.4rem 1.3rem;
-  }
-`;
-
-const LinkStyled = styled.a`
-  cursor: pointer;
-
-  border-radius: 2.4rem;
-
-  color: #42d17d;
-  background-color: #42d17e29;
-  font-size: 1.4rem;
-  font-weight: 900;
-  white-space: nowrap;
-
-  &:hover {
-    color: #363636;
-    background-color: #42d17d;
-    font-weight: 900;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.3rem;
-  }
-`;
-
-const OverViewText = styled.div`
-  color: white;
-  opacity: 0.8;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  margin-left: 1rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    margin-left: 0.6rem;
-  }
-`;
-
-const SubText = styled.div`
-  color: white;
-  font-size: 2.6rem;
-  font-weight: 900;
-
-  padding: 1rem 0rem;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-    padding: 0.6rem 0rem;
-  }
-`;
-
-const InfoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-
-  width: 100%;
-
-  @media (max-width: 768px) {
-    gap: 0.8rem;
-  }
-`;
-
-const InfoTitle = styled.div`
-  border-radius: 2.4rem;
-  width: 14rem;
-  white-space: nowrap;
-  padding: 0.8rem 0rem;
-
-  color: #42d17d;
-  font-weight: 900;
-  background-color: #42d17e29;
-  font-size: 1.3rem;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-    padding: 0.6rem 0rem;
-  }
-`;
-
-const InfoText = styled.div`
-  color: white;
-  font-size: 1.4rem;
-
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 0.4rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.3rem;
-  }
-`;
-
-const MoreContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 0.8rem;
-
-  width: 100%;
-
-  @media (max-width: 768px) {
-    gap: 0.2rem;
-  }
-`;
-
-const MoreTitle = styled.div`
-  color: #42d17d;
-  font-weight: 900;
-  font-size: 2rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-  }
-`;
-
-const MoreText = styled.div`
-  color: white;
-  opacity: 0.8;
-  font-size: 1.5rem;
-
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 0.8rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.4rem;
-  }
-`;
-
-const CodeWrapper = styled.div`
-  border-radius: 0.6rem;
-  padding: 1.6rem 0;
-
-  color: #42d17eeb;
-  font-weight: 500;
-  background-color: #8ea79829;
-  font-size: 1.4rem;
-  text-align: center;
-
-  @media (max-width: 768px) {
-    padding: 1rem 0;
-  }
-`;
+import * as S from "./styled";
 
 const Detail = () => {
   const router = useRouter();
@@ -224,76 +25,80 @@ const Detail = () => {
   }, [isMobile]);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[#272727] pb-20 pt-24 md:pt-36">
+    <S.Container>
       <Bubble />
 
       {dataById[parsedId] && isMobile ? (
         <div className="w-[80%]">
-          <div className="flex w-full flex-col items-center justify-center gap-10">
+          <div className="flex w-full flex-col items-center justify-center gap-4">
             {/** Title */}
             <div className="flex w-full flex-col gap-5">
               <div>
-                <Title>{dataById[parsedId].title}</Title>
-                <SubTitle>{dataById[parsedId].subTitle}</SubTitle>
+                <S.Title>{dataById[parsedId].title}</S.Title>
+                <S.SubTitle>{dataById[parsedId].subTitle}</S.SubTitle>
               </div>
-              <TagList>
+              <S.TagList>
                 {dataById[parsedId].tagList.map((item, index) => (
-                  <TagItem key={index}>{`#${item}`}</TagItem>
+                  <S.TagItem key={index}>{`#${item}`}</S.TagItem>
                 ))}
-              </TagList>
+              </S.TagList>
             </div>
 
             {/** Image */}
             <div className="flex flex-col gap-6">
               <div className="mt-14 flex w-full items-center justify-center gap-2">
-                <LinkStyled
+                <S.LinkStyled
                   href={dataById[parsedId].githubURL}
                   className="px-10 py-4"
                 >
                   깃허브 바로가기
-                </LinkStyled>
+                </S.LinkStyled>
                 {dataById[parsedId].siteURL && (
-                  <LinkStyled
+                  <S.LinkStyled
                     href={dataById[parsedId].siteURL}
                     className="px-10 py-4"
                   >
                     사이트 바로가기
-                  </LinkStyled>
+                  </S.LinkStyled>
                 )}
               </div>
-              <Image
-                src={dataById[parsedId].imgURL}
-                alt="image"
-                className="rounded-xl"
-                loading="lazy"
-              />
+              {dataById[parsedId].imgURL &&
+                dataById[parsedId].imgURL.map((url, idx) => (
+                  <Image
+                    key={idx} // key는 idx 또는 url 중 고유한 값을 사용
+                    src={url} // 여기서 url은 imgURL 배열의 요소
+                    alt="image"
+                    className="rounded-xl"
+                    loading="lazy"
+                  />
+                ))}
             </div>
 
             {/** OverView */}
             <div className="w-full">
-              <SubText>Description.</SubText>
-              <OverViewText>{dataById[parsedId].overView}</OverViewText>
+              <S.SubText>Description.</S.SubText>
+              <S.OverViewText>{dataById[parsedId].overView}</S.OverViewText>
             </div>
 
             {/** Info */}
             <div className="w-full">
-              <SubText>Info.</SubText>
+              <S.SubText>Info.</S.SubText>
               <div className="ml-2 flex flex-col gap-3">
-                <InfoContainer>
-                  <InfoTitle>개발 기간</InfoTitle>
-                  <InfoText>{dataById[parsedId].infoList[0]}</InfoText>
-                </InfoContainer>
-                <InfoContainer>
-                  <InfoTitle>개발 구성원</InfoTitle>
-                  <InfoText>{dataById[parsedId].infoList[1]}</InfoText>
-                </InfoContainer>
-                <InfoContainer>
-                  <InfoTitle>개발 업무</InfoTitle>
-                  <InfoText>{dataById[parsedId].infoList[2]}</InfoText>
-                </InfoContainer>
-                <InfoContainer>
-                  <InfoTitle>기술 스택</InfoTitle>
-                  <InfoText>
+                <S.InfoContainer>
+                  <S.InfoTitle>개발 기간</S.InfoTitle>
+                  <S.InfoText>{dataById[parsedId].infoList[0]}</S.InfoText>
+                </S.InfoContainer>
+                <S.InfoContainer>
+                  <S.InfoTitle>개발 구성원</S.InfoTitle>
+                  <S.InfoText>{dataById[parsedId].infoList[1]}</S.InfoText>
+                </S.InfoContainer>
+                <S.InfoContainer>
+                  <S.InfoTitle>개발 업무</S.InfoTitle>
+                  <S.InfoText>{dataById[parsedId].infoList[2]}</S.InfoText>
+                </S.InfoContainer>
+                <S.InfoContainer>
+                  <S.InfoTitle>기술 스택</S.InfoTitle>
+                  <S.InfoText>
                     {dataById[parsedId].infoList[3].map((item, index) => (
                       <Image
                         key={index}
@@ -303,43 +108,45 @@ const Detail = () => {
                         loading="lazy"
                       />
                     ))}
-                  </InfoText>
-                </InfoContainer>
+                  </S.InfoText>
+                </S.InfoContainer>
               </div>
             </div>
 
             {/** What did I do. */}
             <div className="w-full">
-              <SubText>What did I do.</SubText>
+              <S.SubText>What did I do.</S.SubText>
               <div className="ml-2">
-                <TagList>
+                <S.TagList>
                   {dataById[parsedId].whatDidIdo.map((item, index) => (
-                    <TagItem key={index}>{`#${item}`}</TagItem>
+                    <S.TagItem key={index}>{`#${item}`}</S.TagItem>
                   ))}
-                </TagList>
+                </S.TagList>
               </div>
             </div>
 
             {/** More */}
             {dataById[parsedId]?.moreList && (
               <div className="w-full">
-                <SubText>More.</SubText>
+                <S.SubText>More.</S.SubText>
 
                 <div className="ml-2 flex flex-col gap-8">
                   {Object.entries(dataById[parsedId].moreList ?? {}).map(
                     ([key, value], index) => (
-                      <MoreContainer key={index}>
-                        <MoreTitle>{key}</MoreTitle>
-                        <MoreText>
+                      <S.MoreContainer key={index}>
+                        <S.MoreTitle>{key}</S.MoreTitle>
+                        <S.MoreText>
                           {value[0].split("\n").map((line, index) => (
                             <React.Fragment key={index}>
                               {line}
                               <br />
                             </React.Fragment>
                           ))}
-                          {value[1] && <CodeWrapper>{value[1]}</CodeWrapper>}
-                        </MoreText>
-                      </MoreContainer>
+                          {value[1] && (
+                            <S.CodeWrapper>{value[1]}</S.CodeWrapper>
+                          )}
+                        </S.MoreText>
+                      </S.MoreContainer>
                     ),
                   )}
                 </div>
@@ -348,86 +155,90 @@ const Detail = () => {
           </div>
 
           <div className="mt-24 flex items-center justify-center">
-            <LinkStyled onClick={() => router.back()} className="px-10 py-4">
+            <S.LinkStyled onClick={() => router.back()} className="px-10 py-4">
               목록으로 가기
-            </LinkStyled>
+            </S.LinkStyled>
           </div>
         </div>
       ) : (
         <div className="w-[46%]">
-          <div className="flex w-full flex-col items-center justify-center gap-20">
+          <div className="flex w-full flex-col items-center justify-center gap-24">
             {/** Title */}
             <div className="flex w-full flex-col gap-5">
               <div>
-                <Title>{dataById[parsedId].title}</Title>
-                <SubTitle>{dataById[parsedId].subTitle}</SubTitle>
+                <S.Title>{dataById[parsedId].title}</S.Title>
+                <S.SubTitle>{dataById[parsedId].subTitle}</S.SubTitle>
               </div>
 
-              <TagList>
+              <S.TagList>
                 {dataById[parsedId].tagList.map((item, index) => (
-                  <TagItem key={index}>{`#${item}`}</TagItem>
+                  <S.TagItem key={index}>{`#${item}`}</S.TagItem>
                 ))}
-              </TagList>
+              </S.TagList>
             </div>
 
             {/** Image */}
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col items-center justify-center gap-8">
               <div className="flex w-full items-center justify-center gap-4">
-                <LinkStyled
+                <S.LinkStyled
                   href={dataById[parsedId].githubURL}
                   className="px-10 py-4"
                 >
                   깃허브 바로가기
-                </LinkStyled>
+                </S.LinkStyled>
                 {dataById[parsedId].siteURL && (
-                  <LinkStyled
+                  <S.LinkStyled
                     href={dataById[parsedId].siteURL}
                     className="px-10 py-4"
                   >
                     사이트 바로가기
-                  </LinkStyled>
+                  </S.LinkStyled>
                 )}
               </div>
-              <Image
-                src={dataById[parsedId].imgURL}
-                alt="image"
-                className="rounded-xl"
-                loading="lazy"
-              />
+              {dataById[parsedId].imgURL &&
+                dataById[parsedId].imgURL.map((url, idx) => (
+                  <Image
+                    key={idx} // key는 idx 또는 url 중 고유한 값을 사용
+                    src={url} // 여기서 url은 imgURL 배열의 요소
+                    alt="image"
+                    className="rounded-xl"
+                    loading="lazy"
+                  />
+                ))}
             </div>
 
             {/** OverView */}
             <div className="w-full">
-              <SubText>Description.</SubText>
-              <OverViewText>
+              <S.SubText>Description.</S.SubText>
+              <S.OverViewText>
                 {dataById[parsedId].overView.split("\n").map((line, index) => (
                   <React.Fragment key={index}>
                     {line}
                     <br />
                   </React.Fragment>
                 ))}
-              </OverViewText>
+              </S.OverViewText>
             </div>
 
             {/** Info */}
             <div className="w-full">
-              <SubText>Info.</SubText>
+              <S.SubText>Info.</S.SubText>
               <div className="ml-4 flex flex-col gap-3">
-                <InfoContainer>
-                  <InfoTitle>개발 기간</InfoTitle>
-                  <InfoText>{dataById[parsedId].infoList[0]}</InfoText>
-                </InfoContainer>
-                <InfoContainer>
-                  <InfoTitle>개발 구성원</InfoTitle>
-                  <InfoText>{dataById[parsedId].infoList[1]}</InfoText>
-                </InfoContainer>
-                <InfoContainer>
-                  <InfoTitle>개발 업무</InfoTitle>
-                  <InfoText>{dataById[parsedId].infoList[2]}</InfoText>
-                </InfoContainer>
-                <InfoContainer>
-                  <InfoTitle>기술 스택</InfoTitle>
-                  <InfoText>
+                <S.InfoContainer>
+                  <S.InfoTitle>개발 기간</S.InfoTitle>
+                  <S.InfoText>{dataById[parsedId].infoList[0]}</S.InfoText>
+                </S.InfoContainer>
+                <S.InfoContainer>
+                  <S.InfoTitle>개발 구성원</S.InfoTitle>
+                  <S.InfoText>{dataById[parsedId].infoList[1]}</S.InfoText>
+                </S.InfoContainer>
+                <S.InfoContainer>
+                  <S.InfoTitle>개발 업무</S.InfoTitle>
+                  <S.InfoText>{dataById[parsedId].infoList[2]}</S.InfoText>
+                </S.InfoContainer>
+                <S.InfoContainer>
+                  <S.InfoTitle>기술 스택</S.InfoTitle>
+                  <S.InfoText>
                     {dataById[parsedId].infoList[3].map((item, index) => (
                       <Image
                         key={index}
@@ -437,43 +248,45 @@ const Detail = () => {
                         loading="lazy"
                       />
                     ))}
-                  </InfoText>
-                </InfoContainer>
+                  </S.InfoText>
+                </S.InfoContainer>
               </div>
             </div>
 
             {/** What did I do. */}
             <div className="w-full">
-              <SubText>What did I do.</SubText>
+              <S.SubText>What did I do.</S.SubText>
               <div className="ml-4">
-                <TagList>
+                <S.TagList>
                   {dataById[parsedId].whatDidIdo.map((item, index) => (
-                    <TagItem key={index}>{`#${item}`}</TagItem>
+                    <S.TagItem key={index}>{`#${item}`}</S.TagItem>
                   ))}
-                </TagList>
+                </S.TagList>
               </div>
             </div>
 
             {/** More */}
             {dataById[parsedId]?.moreList && (
               <div className="w-full">
-                <SubText>More.</SubText>
+                <S.SubText>More.</S.SubText>
 
                 <div className="ml-4 flex flex-col gap-10">
                   {Object.entries(dataById[parsedId].moreList ?? {}).map(
                     ([key, value], index) => (
-                      <MoreContainer key={index}>
-                        <MoreTitle>{key}</MoreTitle>
-                        <MoreText>
+                      <S.MoreContainer key={index}>
+                        <S.MoreTitle>{key}</S.MoreTitle>
+                        <S.MoreText>
                           {value[0].split("\n").map((line, index) => (
                             <React.Fragment key={index}>
                               {line}
                               <br />
                             </React.Fragment>
                           ))}
-                          {value[1] && <CodeWrapper>{value[1]}</CodeWrapper>}
-                        </MoreText>
-                      </MoreContainer>
+                          {value[1] && (
+                            <S.CodeWrapper>{value[1]}</S.CodeWrapper>
+                          )}
+                        </S.MoreText>
+                      </S.MoreContainer>
                     ),
                   )}
                 </div>
@@ -481,13 +294,13 @@ const Detail = () => {
             )}
           </div>
           <div className="mt-28 flex w-full items-center justify-center">
-            <LinkStyled onClick={() => router.back()} className="px-14 py-6">
+            <S.LinkStyled onClick={() => router.back()} className="px-14 py-6">
               목록으로 가기
-            </LinkStyled>
+            </S.LinkStyled>
           </div>
         </div>
       )}
-    </div>
+    </S.Container>
   );
 };
 

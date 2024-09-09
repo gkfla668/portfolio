@@ -23,8 +23,7 @@ export const ImageWrapper = styled.div`
   margin-right: 2rem;
 
   @media (max-width: 768px) {
-    width: 40rem;
-    height: auto;
+    width: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;

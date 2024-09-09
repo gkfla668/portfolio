@@ -42,7 +42,14 @@ export const Container = styled.div`
   animation: ${fadeIn} 4s;
 `;
 
-export const PageContainerStyle = styled.div`
+export const Box = styled.div`
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const SectionContainer = styled.div`
   padding: 6rem 18rem;
   height: 100vh;
   display: flex;

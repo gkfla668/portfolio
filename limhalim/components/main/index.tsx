@@ -38,9 +38,9 @@ const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
   return (
     <S.Container>
       <Bubble />
-      <div className="z-10 flex w-full flex-col">
+      <S.Box>
         {sections.map((section, index) => (
-          <S.PageContainerStyle
+          <S.SectionContainer
             key={section}
             id={section}
             onWheel={e => HandleWheel(e, index, sections)}
@@ -51,9 +51,9 @@ const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
             <S.ContentBox>
               {getPageComponent(section, latestPosts)}
             </S.ContentBox>
-          </S.PageContainerStyle>
+          </S.SectionContainer>
         ))}
-      </div>
+      </S.Box>
     </S.Container>
   );
 };
