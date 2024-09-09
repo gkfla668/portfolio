@@ -39,7 +39,7 @@ interface ProjectById {
 
 export const dataById: ProjectById = {
   0: {
-    title: "READYOU | 테오의스프린트17기 ",
+    title: "READYOU (리드유)",
     subTitle: "10분 README 완성!",
     tagList: ["웹개발", "반응형", "드래그앤드롭"],
     githubURL: "https://github.com/Read-U/readyou-front",
@@ -79,7 +79,7 @@ export const dataById: ProjectById = {
     },
   },
   1: {
-    title: "걱정보관함 | 구름톤유니브2기 ",
+    title: "걱정보관함",
     subTitle: "걱정이 일상을 방해하지 못하도록",
     tagList: ["웹개발", "PWA", "푸시알림"],
     githubURL: "https://github.com/9oormthon-univ/2024_BEOTKKOTTHON_TEAM_8_FE",
@@ -123,8 +123,8 @@ export const dataById: ProjectById = {
     },
   },
   2: {
-    title: "재고 관리의 모든 것, 스톡원큐",
-    subTitle: "IT연합동아리UMC 하계 프로젝트",
+    title: "스톡원큐",
+    subTitle: "재고 관리의 모든 것",
     tagList: ["웹개발", "페이지네이션", "CRUD"],
     githubURL: "https://github.com/stockOneQ",
     imgURL: [StockOneQ, StockOneQ_1],
