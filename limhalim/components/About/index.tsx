@@ -96,26 +96,24 @@ const About = () => {
               <S.ActivitiesContainer>
                 <S.ActivityItem>
                   <S.Date>2024.02-2024.08</S.Date>
-                  <S.Text>구름톤 유니브 2기, Web 파트 수료</S.Text>
+                  <S.Text>구름톤 유니브 2기, Web 파트</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.08-2023.11</S.Date>
-                  <S.Text>경기청년갭이어 프로그램 2기 수료</S.Text>
+                  <S.Text>경기청년갭이어 프로그램 2기</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.07-2023.08</S.Date>
-                  <S.Text>
-                    (주)위드플러스 프론트엔드 직무 2개월 인턴 근무
-                  </S.Text>
+                  <S.Text>(주)위드플러스 프론트엔드 직무 2개월 인턴</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.03-2023.06</S.Date>
                   <S.Text>
-                    UMC(University Makeus Challenge) 4기, Web 파트 스터디장 수료
+                    UMC(University Makeus Challenge) 4기, Web 파트
                   </S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
-                  <S.Date>2019.03-2024.08</S.Date>
+                  <S.Date>2019.03-2025.02</S.Date>
                   <S.Text>
                     아주대학교 디지털미디어학과 & 소프트웨어학과 재학 중
                   </S.Text>
@@ -144,12 +142,12 @@ const About = () => {
                     >
                       구름톤 유니브
                     </a>
-                    2기, Web 파트 수료
+                    2기, Web 파트
                   </S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.08-2023.11</S.Date>
-                  <S.Text>경기청년갭이어 프로그램 2기 수료</S.Text>
+                  <S.Text>경기청년갭이어 프로그램 2기</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.07-2023.08</S.Date>
@@ -157,7 +155,7 @@ const About = () => {
                     <a href="https://withplus.plus/" className="text-[#42d17d]">
                       (주)위드플러스
                     </a>
-                    프론트엔드 직무 2개월 인턴 근무
+                    프론트엔드 직무 2개월 인턴
                   </S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
@@ -169,11 +167,11 @@ const About = () => {
                     >
                       UMC(University Makeus Challenge)
                     </a>
-                    4기, Web 파트 수료
+                    4기, Web 파트
                   </S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
-                  <S.Date>2019.03-2024.08</S.Date>
+                  <S.Date>2019.03-2025.02</S.Date>
                   <S.Text>
                     <a
                       href="https://www.ajou.ac.kr/kr/index.do"

@@ -1,8 +1,15 @@
 import { StaticImageData } from "next/image";
 
 import Readyou from "../public/images/readyou.png";
+import ReadyouGIF1 from "../public/gifs/READYOU_1.gif";
+import ReadyouGIF2 from "../public/gifs/READYOU_2.gif";
+
 import WorryBox from "../public/images/worry-box.webp";
+import WorryBox_1 from "../public/gifs/WorryBox_1.gif";
+
 import StockOneQ from "../public/images/StockOneQ.webp";
+import StockOneQ_1 from "../public/gifs/StockOneQ_1.gif";
+
 import LivePick from "../public/images/LivePick.webp";
 
 import NextJSSVG from "../public/icons/nextjs.webp";
@@ -19,7 +26,7 @@ interface ProjectItem {
   tagList: string[];
   githubURL?: string;
   siteURL?: string;
-  imgURL: StaticImageData;
+  imgURL: StaticImageData[];
   overView: string;
   infoList: [string, string, string, StaticImageData[]];
   whatDidIdo: string[];
@@ -32,12 +39,12 @@ interface ProjectById {
 
 export const dataById: ProjectById = {
   0: {
-    title: "테오의스프린트17기, READYOU",
-    subTitle: "10분 README 완성!, READYOU",
+    title: "READYOU | 테오의스프린트17기 ",
+    subTitle: "10분 README 완성!",
     tagList: ["웹개발", "반응형", "드래그앤드롭"],
     githubURL: "https://github.com/Read-U/readyou-front",
     siteURL: "https://readyou.vercel.app/",
-    imgURL: Readyou,
+    imgURL: [Readyou, ReadyouGIF1, ReadyouGIF2],
     overView:
       "협업 프로세스를 경험하는 테오의 스프린트 17기에 FE 개발자로 참여하여 단기간으로 진행한 팀 프로젝트입니다. READYOU는 README 파일에 추가할 항목을 선택하여 내용을 기입하면 자동으로 마크 다운을 작성해주는 서비스입니다.",
     infoList: [
@@ -72,11 +79,11 @@ export const dataById: ProjectById = {
     },
   },
   1: {
-    title: "구름톤유니브2기 벚꽃톤 프로젝트",
-    subTitle: "걱정이 일상을 방해하지 못하도록, 걱정보관함",
+    title: "걱정보관함 | 구름톤유니브2기 ",
+    subTitle: "걱정이 일상을 방해하지 못하도록",
     tagList: ["웹개발", "PWA", "푸시알림"],
     githubURL: "https://github.com/9oormthon-univ/2024_BEOTKKOTTHON_TEAM_8_FE",
-    imgURL: WorryBox,
+    imgURL: [WorryBox, WorryBox_1],
     overView:
       "구름에서 주관하는 IT 연합 동아리인 구름톤유니브 2기 벚꽃톤에 참여한 팀 프로젝트입니다. 해당 프로젝트의 슬로건은 '불쑥 찾아오는 걱정이 당신을 방해하지 못하도록.'이며, 걱정 시간을 설정하고 해당 걱정 시간에만 걱정을 마주하는 습관을 통해 현재에 집중하면서도 수많은 걱정에 건강하게 대처할 수 있도록 도와주는 서비스입니다. \n \n 10일 간의 한정된 시간 속에서 매일 밤 데일리스크럼 시간을 가졌습니다. 팀원들과 업무를 공유하고 협업하는 과정에서 꼭 필요한 업무만을 가지고 작업하는 방식을 통해 작업의 효율성을 경험하고 개발의 능률을 향상시킬 수 있었습니다. 또한 첫 해커톤과 첫 배포, 첫 PWA 적용 등 짧은 기간동안 너무나도 많은 것들을 배우고 경험한 뜻깊은 프로젝트입니다.",
     infoList: [
@@ -103,18 +110,24 @@ export const dataById: ProjectById = {
       "Firebase Cloud Messaging(FCM)을 사용한 웹에서의 푸시알림 구현": [
         "서비스 워커를 등록하여 백그라운드 메시징 서비스를 통해 사용자가 앱에 접속하지 않아도 오프라인 상태에서 푸시 알림을 제공하고자 하였습니다. \n \n 1. 사용자의 브라우저에서 Notification.requestPermission()을 통해 푸시 알림 권한 요청 \n 2. 메시징 서비스 getToken()를 통해 vapidKey를 발급 받아서 현재 사용자 디바이스의 FCM 등록 토큰을 얻는다. 이후 해당 토큰을 서버의 특정 엔드포인트로 POST 요청을 보내 토큰을 등록한다. \n 3. 백그라운드에서의 메세지 수신을 위한 서비스워커 등록 \n 4. 메시징 서비스 onBackgroundMessage()를 통해 백그라운드 상태에서 FCM에서 보낸 푸시 알림 메시지를 실시간으로 수신한다.",
       ],
+      "Firebase Cloud Messaging(FCM) 브라우저 호환성 이슈 해결": [
+        "messaging.onBackgroundMessage 대신 self.addEventListener('push')와 self.addEventListener('notificationclick') 이벤트를 직접 처리하도록 수정하여 브라우저 호환성 이슈 해결",
+      ],
       "새로고침 시 전역 상태가 초기화 되는 현상 해결": [
-        "Recoil로 관리하는 상태는 클라이언트 사이드에서만 유지되므로 페이지를 새로고침하면 서버 측에서 초기 상태를 가져와 다시 렌더링하기 때문에 recoil 상태가 초기화되는 것을 알 수 있었습니다. 이를 해결하기 위해 recoil-persist 라이브러리를 사용하여 sesstionStorage 웹 스토리지를 사용하고자 하였습니다. \n  하지만, 서버 사이드 렌더링 환경에서는 window 객체가 정의되어 있지 않기 때문에 서버 사이드 페이지가 클라이언트에 로드될 때 까지 sessionStorage에 접근이 불가능하였습니다. 따라서, 아래 코드를 추가하여 sessionStorage를 사용하였고, 새로고침 시 전역 상태가 초기화 되는 문제를 해결할 수 있었습니다.",
+        "Recoil로 관리하는 상태는 클라이언트 사이드에서만 유지되므로 페이지를 새로고침하면 서버 측에서 초기 상태를 가져와 다시 렌더링하기 때문에 recoil 상태가 초기화되는 것을 알 수 있었습니다. 이를 해결하기 위해 recoil-persist 라이브러리를 사용하여 sesstionStorage 웹 스토리지를 사용하고자 하였습니다. \n  하지만, 서버 사이드 렌더링 환경에서는 window 객체가 정의되어 있지 않기 때문에 서버 사이드 페이지가 클라이언트에 로드될 때 까지 sessionStorage에 접근이 불가능하였습니다. \n 따라서, 아래 코드의 조건부 렌더링 코드를 추가하여 sessionStorage를 사용하였고, 새로고침 시 전역 상태가 초기화 되는 문제를 해결할 수 있었습니다.",
         "const sessionStorage = typeof window !== 'undefined' ? window.sessionStorage : undefined;",
+      ],
+      "푸시 알림이 중복으로 발생하는 문제 해결": [
+        "FCM에서 payload에 notification 항목에 데이터를 보낼 경우, 자동으로 알림 객체를 감지하여 알림 메시지를 기본으로 생성되는 것을 확인했습니다. 따라서 notification 항목이 아닌, data 항목에 필요한 데이터를 보내주어 해결하였습니다.",
       ],
     },
   },
   2: {
-    title: "IT연합동아리UMC 하계 프로젝트",
-    subTitle: "재고 관리의 모든 것, 스톡원큐",
+    title: "재고 관리의 모든 것, 스톡원큐",
+    subTitle: "IT연합동아리UMC 하계 프로젝트",
     tagList: ["웹개발", "페이지네이션", "CRUD"],
     githubURL: "https://github.com/stockOneQ",
-    imgURL: StockOneQ,
+    imgURL: [StockOneQ, StockOneQ_1],
     overView:
       "대학생 IT 연합동아리인 UMC(University Makeus Challenge)의 하계 프로젝트로 참여한 팀 프로젝트입니다. 스톡원큐는 전국 각지의 카페 자영업자를 위한 카페 맞춤 관리형 서비스로 기존 ERP 서비스와는 다른, 재고 관리를 보다 편리한 방향으로 매장 운영을 원활히 할 수 있는 서비스입니다.",
     infoList: [
@@ -139,6 +152,8 @@ export const dataById: ProjectById = {
       "Promise.allsettled() 사용하여 게시글 삭제 성능 향상시키기": [
         "기존 map만을 사용하여 일일이 API 통신을 보내고 있는 것에 대해 다른 프론트엔드 팀원으로부터 최악의 경우 성능 저하의 가능성에 대하여 피드백을 받았습니다. 저는 이를 해결하기 위해 찾아보던 중 여러 API를 병렬적으로 실행시키기 위한 메소드 Promise.all과 Promise.allSettled를 찾게 되었습니다. 차이점을 찾아보니 all의 경우 하나라도 reject가 되면 모든 promise들이 catch로 빠지게 되면서 성공한 promise들도 무시돼서 다시 보내야하는 번거로움이 있는데, allSettled의 경우 각 promise에 대한 처리 상태와 결과 값을 배열에 같이 보내져서, rejected된 promise에 대해서 분기 처리가 가능한 것을 알 수 있었습니다. 여러 개의 게시글을 선택하여 삭제하는 해당 기능의 경우 allSettled가 더 알맞다고 판단하여 이를 통해 삭제 성능을 향상시키고자 하였고, 백엔드분과 협의하여 삭제 기능에 대한 예외처리 로직까지 추가하여 사용성을 높일 수 있었습니다.",
       ],
+      "React.memo를 사용하여 불필요한 리렌더링을 방지해 게시글 리렌더링 최적화":
+        [""],
     },
   },
   3: {
@@ -146,7 +161,7 @@ export const dataById: ProjectById = {
     subTitle: "(주)위드플러스 자체 플랫폼 교육 서비스, Live Pick",
     tagList: ["기획", "디자인", "웹개발", "socket통신"],
     siteURL: "https://www.withplus.live/content/pick",
-    imgURL: LivePick,
+    imgURL: [LivePick],
     overView:
       "4학년 1학기, 여름방학 2개월 간 인턴을 수행하며 처음부터 끝까지 모든 개발에 참여한 팀 프로젝트입니다. Live Pick은 매 턴마다 숫자 경매를 실시하여 최종 숫자의 합이 가장 낮은 팀이 승리하는 의사결정 훈련 게임입니다. 마이너스 숫자 경매인 '노땡스'를 모티브하여 제작 된 온라인 교육 서비스입니다.",
     infoList: [

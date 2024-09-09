@@ -13,7 +13,11 @@ const SlideContainer = (props: SlideProps) => {
     <S.Container>
       <S.Content>
         <S.ImageWrapper>
-          <Image src={props.imgURL} alt="img" className="w-full rounded-xl" />
+          <Image
+            src={props.imgURL[0]}
+            alt="img"
+            className="w-full rounded-xl"
+          />
         </S.ImageWrapper>
 
         <div className="flex h-full w-full flex-col justify-between">
