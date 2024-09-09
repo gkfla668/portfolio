@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { dataById } from "@/data/projects";
 import Bubble from "@/components/Bubble";
 
-import * as S from "./styled";
+import * as S from "../../styles/detailstyled";
 
 const Detail = () => {
   const router = useRouter();
