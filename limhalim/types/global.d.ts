@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 
 export interface SlideProps {
   index: number;
-  imgURL: StaticImageData;
+  imgURL: StaticImageData[];
   title: string;
   subTitle?: string;
   tagList: string[];
