@@ -2,7 +2,7 @@ import { fadeIn } from "@/styles/animation";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 7.2rem 3rem;
+  padding: 0 3rem;
 
   display: flex;
   justify-content: center;
@@ -10,37 +10,67 @@ export const Container = styled.div`
 
   animation: ${fadeIn} 6s forwards;
   overflow: hidden;
+
+  height: 36rem;
+
   @media (max-width: 768px) {
+    height: 38rem;
     padding: 2.4rem 1.6rem;
   }
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageSection = styled.div`
   width: 120rem;
-  max-width: 120rem;
-  min-width: 20rem;
-  height: auto;
-  margin-right: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
-    width: 30rem;
+    width: 28rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 `;
 
-export const Content = styled.div`
-  height: 28rem;
+export const RightSection = styled.div`
+  padding: 4rem 0;
   display: flex;
-  align-items: start;
+  flex-direction: column;
+
+  width: 100%;
+
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+`;
+
+export const Content = styled.div`
+  height: 100%;
+  display: flex;
   gap: 5.2rem;
   overflow: hidden; /* 컨텐츠 넘침 방지 */
 
   @media (max-width: 768px) {
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     height: 100%;
     gap: 0;
+  }
+`;
+
+export const InfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+  @media (max-width: 768px) {
+    line-height: 1rem;
   }
 `;
 
@@ -110,7 +140,7 @@ export const DetailButton = styled.button`
 
   padding: 1rem 0;
 
-  width: 14rem;
+  width: 16rem;
 
   color: #42d17d;
   background-color: #42d17e29;
