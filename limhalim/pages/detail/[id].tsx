@@ -180,12 +180,15 @@ const Detail = () => {
             {/** Image */}
             <div className="flex flex-col items-center justify-center gap-8">
               <div className="flex w-full items-center justify-center gap-4">
-                <S.LinkStyled
-                  href={dataById[parsedId].githubURL}
-                  className="px-10 py-4"
-                >
-                  깃허브 바로가기
-                </S.LinkStyled>
+                {dataById[parsedId].githubURL && (
+                  <S.LinkStyled
+                    href={dataById[parsedId].githubURL}
+                    className="px-10 py-4"
+                  >
+                    깃허브 바로가기
+                  </S.LinkStyled>
+                )}
+
                 {dataById[parsedId].siteURL && (
                   <S.LinkStyled
                     href={dataById[parsedId].siteURL}
