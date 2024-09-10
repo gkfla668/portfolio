@@ -157,8 +157,8 @@ export const dataById: ProjectById = {
     },
   },
   3: {
-    title: "2023 하계 인턴",
-    subTitle: "(주)위드플러스 자체 플랫폼 교육 서비스, Live Pick",
+    title: "(주)위드플러스 자체 플랫폼 교육 서비스, Live Pick",
+    subTitle: "2023 하계 인턴",
     tagList: ["기획", "디자인", "웹개발", "socket통신"],
     siteURL: "https://www.withplus.live/content/pick",
     imgURL: [LivePick],
