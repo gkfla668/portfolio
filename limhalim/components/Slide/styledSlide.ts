@@ -11,7 +11,7 @@ export const Container = styled.div`
   animation: ${fadeIn} 6s forwards;
   overflow: hidden;
 
-  height: 36rem;
+  height: 38rem;
 
   @media (max-width: 768px) {
     height: 38rem;
