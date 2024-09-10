@@ -24,9 +24,9 @@ const Projects = () => {
   return (
     <S.Container id="Projects">
       {scroll && (
-        <S.ContentBox>
+        <S.Box>
           <Slide />
-        </S.ContentBox>
+        </S.Box>
       )}
     </S.Container>
   );
