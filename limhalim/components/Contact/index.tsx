@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import velogPNG from "/public/icons/velog.webp";
 import githubPNG from "/public/icons/github.webp";
 
-import HandleScroll from "@/utils/handleScroll";
-
 import * as S from "./styled";
+import useWindowSizeHandler from "@/hooks/useWindowSizeHandler";
+import useScrollHandler from "@/hooks/useScrollHandler";
 
 interface BlogPost {
   title: string;
@@ -15,30 +14,8 @@ interface BlogPost {
 }
 
 const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [scroll, setScroll] = useState<boolean>(false);
-  const threshold = 2400;
-
-  useEffect(() => {
-    const scrollHandler = () => HandleScroll({ threshold, setScroll });
-
-    // 페이지 로드 시 현재 스크롤 위치 확인 및 scroll 상태 설정
-    scrollHandler();
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // 초기에도 isMobile 상태를 설정
-
-    window.addEventListener("scroll", scrollHandler);
-    window.addEventListener("resize", handleResize); // 윈도우의 크기가 변경될 때마다 이를 업데이트
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const isMobile = useWindowSizeHandler();
+  const scroll = useScrollHandler(1000);
 
   return (
     <div

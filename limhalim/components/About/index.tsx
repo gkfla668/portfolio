@@ -1,34 +1,14 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
-
-import HandleScroll from "@/utils/handleScroll";
 
 import Profile from "/public/images/profile.jpg";
 
 import * as S from "./styled";
+import useWindowSizeHandler from "@/hooks/useWindowSizeHandler";
+import useScrollHandler from "@/hooks/useScrollHandler";
 
 const About = () => {
-  const [scroll, setScroll] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const threshold = 200;
-    const scrollHandler = () => HandleScroll({ threshold, setScroll });
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // 초기에도 isMobile 상태를 설정
-
-    window.addEventListener("scroll", scrollHandler);
-    window.addEventListener("resize", handleResize); // 윈도우의 크기가 변경될 때마다 이를 업데이트
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const isMobile = useWindowSizeHandler();
+  const scroll = useScrollHandler(200);
 
   return (
     <div id="About">
@@ -100,11 +80,11 @@ const About = () => {
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.08-2023.11</S.Date>
-                  <S.Text>경기청년갭이어 프로그램 2기</S.Text>
+                  <S.Text>경기청년갭이어 프로그램 2기 (SW서비스 개발)</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.07-2023.08</S.Date>
-                  <S.Text>(주)위드플러스 프론트엔드 직무 2개월 인턴</S.Text>
+                  <S.Text>(주)위드플러스 프론트엔드 직무 2개월 인턴십</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.03-2023.06</S.Date>
@@ -115,7 +95,8 @@ const About = () => {
                 <S.ActivityItem>
                   <S.Date>2019.03-2025.02</S.Date>
                   <S.Text>
-                    아주대학교 디지털미디어학과 & 소프트웨어학과 재학 중
+                    아주대학교 디지털미디어학과 & 소프트웨어학과(복수전공) 졸업
+                    예정
                   </S.Text>
                 </S.ActivityItem>
               </S.ActivitiesContainer>
@@ -147,7 +128,7 @@ const About = () => {
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.08-2023.11</S.Date>
-                  <S.Text>경기청년갭이어 프로그램 2기</S.Text>
+                  <S.Text>경기청년갭이어 프로그램 2기 (SW서비스 개발)</S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
                   <S.Date>2023.07-2023.08</S.Date>
@@ -155,7 +136,7 @@ const About = () => {
                     <a href="https://withplus.plus/" className="text-[#42d17d]">
                       (주)위드플러스
                     </a>
-                    프론트엔드 직무 2개월 인턴
+                    프론트엔드 직무 2개월 인턴십
                   </S.Text>
                 </S.ActivityItem>
                 <S.ActivityItem>
@@ -179,7 +160,7 @@ const About = () => {
                     >
                       아주대학교
                     </a>
-                    디지털미디어학과 & 소프트웨어학과 재학 중
+                    디지털미디어학과 & 소프트웨어학과(복수전공) 졸업 예정
                   </S.Text>
                 </S.ActivityItem>
               </S.ActivitiesContainer>

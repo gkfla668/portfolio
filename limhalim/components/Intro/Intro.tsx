@@ -1,25 +1,16 @@
 import { useEffect, useState } from "react";
 import * as S from "./styles";
-import HandleScroll from "@/utils/handleScroll";
+import useScrollHandler from "@/hooks/useScrollHandler";
 
 const Intro = () => {
   const completionWord = "LIM HALIM PORTFOLIO";
 
-  const [scroll, setScroll] = useState<boolean>(false);
+  const scroll = useScrollHandler(200);
   const [title, setTitle] = useState("");
   const [index, setIndex] = useState(0); // 현재 타이핑 한 글자의 index
 
   useEffect(() => {
     setIndex(0);
-
-    const threshold = 200;
-    const scrollHandler = () => HandleScroll({ threshold, setScroll });
-
-    window.addEventListener("scroll", scrollHandler);
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
   }, [scroll]);
 
   useEffect(() => {

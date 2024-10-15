@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -6,28 +5,17 @@ import { dataById } from "@/data/projects";
 import Bubble from "@/components/Bubble";
 
 import * as S from "../../styles/detailstyled";
+import useWindowSizeHandler from "@/hooks/useWindowSizeHandler";
 
 const Detail = () => {
   const router = useRouter();
   const { id } = router.query;
   const parsedId = Array.isArray(id) ? Number(id[0]) : Number(id);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize(); // 초기에도 isMobile 상태를 설정, 이를 안하면 detail 페이지에 반응형이 안먹음
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isMobile]);
+  const isMobile = useWindowSizeHandler();
 
   return (
     <S.Container>
       <Bubble />
-
       {dataById[parsedId] && isMobile ? (
         <div className="w-[80%]">
           <div className="flex w-full flex-col items-center justify-center gap-4">
@@ -308,13 +296,3 @@ const Detail = () => {
 };
 
 export default Detail;
-
-export async function getServerSideProps({
-  params: { id },
-}: {
-  params: { id: number };
-}) {
-  return {
-    props: { id },
-  };
-}
