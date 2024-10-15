@@ -1,4 +1,4 @@
-import { fade, fadeIn, RotateReverse } from "@/styles/animation";
+import { fadeIn, RotateReverse } from "@/styles/animation";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -9,6 +9,7 @@ export const Container = styled.div`
 `;
 
 export const ContentBox = styled.div`
+  margin-left: 2.4rem;
   margin-top: 1.6rem;
 
   height: 100%;
@@ -46,6 +47,7 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  white-space: nowrap;
 `;
 
 export const Stack = styled.div`
@@ -87,7 +89,6 @@ export const Box = styled.span`
   color: #42d17d;
   font-size: 1.6rem;
   font-weight: 600;
-  white-space: nowrap;
   text-align: center;
 
   @media (max-width: 768px) {
