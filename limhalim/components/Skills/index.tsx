@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import HTMLSVG from "../../public/icons/HTML.svg";
-import CSSSVG from "../../public/icons/CSS.svg";
+import HTMLSVG from "../../public/icons/html.svg";
+import CSSSVG from "../../public/icons/css.svg";
 import ReactSVG from "../../public/icons/react_circle.png";
 import NextJSSVG from "../../public/icons/next.js_circle.png";
 import JavaScriptSVG from "../../public/icons/javascript_circle.svg";
