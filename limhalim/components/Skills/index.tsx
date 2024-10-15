@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import HTMLSVG from "../../public/icons/HTML.svg";
-import CSSSVG from "../../public/icons/CSS3_logo.svg";
+import CSSSVG from "../../public/icons/CSS.svg";
 import ReactSVG from "../../public/icons/react_circle.png";
 import NextJSSVG from "../../public/icons/next.js_circle.png";
 import JavaScriptSVG from "../../public/icons/javascript_circle.svg";
@@ -84,7 +84,7 @@ const Skills = () => {
               <Image src={NextJSSVG} alt="nextjs" loading="lazy" />
             </S.Stack>
             <S.Box>
-              버사이드 렌더링(SSR)과 정적 생성(SSG) 기능을 활용해 성능을
+              서버사이드 렌더링(SSR)과 정적 생성(SSG) 기능을 활용해 성능을
               최적화하고 있습니다.
             </S.Box>
           </S.Item>
