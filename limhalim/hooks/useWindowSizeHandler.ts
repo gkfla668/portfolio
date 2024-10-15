@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 
 const useWindowSizeHandler = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 1040);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      if (typeof window !== "undefined") {
+        setIsMobile(window.innerWidth <= 1040);
+      }
     };
 
     // 초기에도 isMobile 상태를 설정
