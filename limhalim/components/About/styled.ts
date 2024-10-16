@@ -2,10 +2,15 @@ import { fade, fadeIn } from "@/styles/animation";
 import styled from "styled-components";
 
 export const ContentBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    align-items: start;
+  }
 `;
 
 export const Job = styled.div`
@@ -20,8 +25,12 @@ export const Job = styled.div`
     opacity: 0;
     margin-right: 0.2rem;
 
+    @media (max-width: 1024px) {
+      font-size: 3.2rem;
+    }
+
     @media (max-width: 768px) {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
     }
   }
 
@@ -117,8 +126,8 @@ export const Birth = styled.p`
 
   animation: ${fade} 14s forwards;
 
-  @media (max-width: 768px) {
-    font-size: 2.4rem;
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
@@ -127,13 +136,12 @@ export const Bar = styled.div`
   border-radius: 0.5rem;
   opacity: 0;
 
-  width: 28rem;
+  width: 24rem;
   height: 0.5rem;
   animation: ${fade} 12s forwards;
 
-  @media (max-width: 768px) {
-    width: 28rem;
-    height: 0.3rem;
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
@@ -142,8 +150,8 @@ export const ActivitiesContainer = styled.ul`
   flex-direction: column;
   gap: 1.4rem;
 
-  @media (max-width: 768px) {
-    gap: 0.8rem;
+  @media (max-width: 1024px) {
+    gap: 0.4rem;
   }
 
   :nth-child(1) {
@@ -168,7 +176,7 @@ export const ActivityItem = styled.li`
   align-items: center;
   gap: 1.6rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 1rem;
   }
 `;
@@ -184,7 +192,7 @@ export const Date = styled.div`
   border-radius: 2.4rem;
   padding: 0.8rem 1.8rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 1.1rem;
     padding: 0.6rem 1.2rem;
   }
@@ -193,13 +201,11 @@ export const Date = styled.div`
 export const Text = styled.p`
   color: white;
   font-size: 1.5rem;
-  white-space: nowrap;
 
   display: flex;
   gap: 0.4rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 1.3rem;
-    white-space: wrap;
   }
 `;

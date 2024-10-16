@@ -134,7 +134,8 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 2rem;
+    gap: 1rem;
+    flex-direction: column;
   }
 `;
 
@@ -144,7 +145,7 @@ export const Container = styled.div`
   gap: 1rem;
 
   @media (max-width: 768px) {
-    gap: 1rem;
+    gap: 0.4rem;
   }
 `;
 
@@ -160,9 +161,9 @@ export const Info = styled.div`
   width: 10rem;
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
-    padding: 0.4rem 0;
-    width: 8rem;
+    font-size: 1rem;
+    padding: 0.2rem 0;
+    width: 6rem;
   }
 `;
 

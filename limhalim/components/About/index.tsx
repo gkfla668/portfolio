@@ -14,56 +14,32 @@ const About = () => {
     <div id="About">
       {scroll && (
         <S.ContentBox>
-          {isMobile ? (
-            <div className="flex w-full flex-col items-start">
-              <S.Job>
-                <span>F</span>
-                <span>r</span>
-                <span>o</span>
-                <span>n</span>
-                <span>t</span>
-                <span>e</span>
-                <span>n</span>
-                <span>d </span>
-                <span>D</span>
-                <span>e</span>
-                <span>v</span>
-                <span>e</span>
-                <span>l</span>
-                <span>o</span>
-                <span>p</span>
-                <span>e</span>
-                <span>r</span>
-              </S.Job>
-            </div>
-          ) : (
-            <div className="flex items-center justify-center gap-16 py-12">
-              <S.Job>
-                <span>F</span>
-                <span>r</span>
-                <span>o</span>
-                <span>n</span>
-                <span>t</span>
-                <span>e</span>
-                <span>n</span>
-                <span>d </span>
-                <span>D</span>
-                <span>e</span>
-                <span>v</span>
-                <span>e</span>
-                <span>l</span>
-                <span>o</span>
-                <span>p</span>
-                <span>e</span>
-                <span>r</span>
-              </S.Job>
-              <S.Bar />
-              <S.Birth>2000.08.31</S.Birth>
-            </div>
-          )}
+          <div className="flex w-full items-start justify-start gap-16 py-0 md:items-center md:py-8">
+            <S.Job>
+              <span>F</span>
+              <span>r</span>
+              <span>o</span>
+              <span>n</span>
+              <span>t</span>
+              <span>e</span>
+              <span>n</span>
+              <span>d </span>
+              <span>D</span>
+              <span>e</span>
+              <span>v</span>
+              <span>e</span>
+              <span>l</span>
+              <span>o</span>
+              <span>p</span>
+              <span>e</span>
+              <span>r</span>
+            </S.Job>
+            <S.Bar />
+            <S.Birth>2000.08.31</S.Birth>
+          </div>
 
           {isMobile ? (
-            <div className="flex flex-col justify-center gap-12">
+            <div className="flex flex-col justify-center gap-8 md:gap-12">
               <S.ProfileImageWrapper>
                 <Image
                   src={Profile}

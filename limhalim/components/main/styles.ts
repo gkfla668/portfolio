@@ -50,13 +50,17 @@ export const Box = styled.div`
 `;
 
 export const SectionContainer = styled.div`
-  padding: 6rem 18rem;
+  padding: 6rem 16rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 1024px) {
+    padding: 4.4rem 8rem;
+  }
+
   @media (max-width: 768px) {
-    padding: 2.8rem 3.2rem;
+    padding: 4.4rem 4.8rem;
   }
 `;
 

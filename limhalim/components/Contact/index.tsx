@@ -47,7 +47,7 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
 
           <div className="flex w-full justify-between">
             <S.Wrapper>
-              <div className="flex flex-col gap-[0.4rem] md:flex-row md:gap-[1.6rem]">
+              <div className="flex gap-[0.4rem] md:gap-[1.6rem]">
                 <S.Container>
                   <S.Info>Phone</S.Info>
                   <S.Detail>010-6384-9653</S.Detail>
@@ -58,12 +58,12 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
                 </S.Container>
               </div>
 
-              <div className="flex flex-col items-center justify-center gap-[1rem] md:flex-row md:gap-[1.6rem]">
+              <div className="flex items-center justify-center gap-[1rem] md:gap-[1.6rem]">
                 <S.Link href="https://github.com/gkfla668">
                   <Image
                     src={githubPNG}
                     alt="github"
-                    width={isMobile ? 24 : 36}
+                    width={isMobile ? 20 : 36}
                     loading="lazy"
                   />
                   <S.LinkTitle>Github</S.LinkTitle>
@@ -72,7 +72,7 @@ const Contact = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
                   <Image
                     src={velogPNG}
                     alt="velog"
-                    width={isMobile ? 24 : 28}
+                    width={isMobile ? 20 : 28}
                     loading="lazy"
                   />
                   <S.LinkTitle>Velog</S.LinkTitle>

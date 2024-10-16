@@ -18,7 +18,10 @@ const Slide = () => {
   };
 
   return (
-    <Slider {...settings} className="mx-20 w-full">
+    <Slider
+      {...settings}
+      className="flex w-full flex-col items-center justify-center"
+    >
       {Object.values(dataById).map((item, index) => (
         <SlideContainer
           key={index}

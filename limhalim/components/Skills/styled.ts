@@ -19,26 +19,31 @@ export const ContentBox = styled.div`
   align-items: start;
   gap: 0.6rem;
 
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+    margin: 0;
+  }
+
   :nth-child(1) {
-    animation: ${fadeIn} 2s forwards;
+    animation: ${fadeIn} 1s forwards;
   }
   :nth-child(2) {
-    animation: ${fadeIn} 2.2s forwards;
+    animation: ${fadeIn} 1.4s forwards;
   }
   :nth-child(3) {
-    animation: ${fadeIn} 2.4s forwards;
+    animation: ${fadeIn} 1.8s forwards;
   }
   :nth-child(4) {
-    animation: ${fadeIn} 2.6s forwards;
+    animation: ${fadeIn} 2.2s forwards;
   }
   :nth-child(5) {
-    animation: ${fadeIn} 2.8s forwards;
+    animation: ${fadeIn} 2.6s forwards;
   }
   :nth-child(6) {
     animation: ${fadeIn} 3s forwards;
   }
   :nth-child(7) {
-    animation: ${fadeIn} 3.2s forwards;
+    animation: ${fadeIn} 3.4s forwards;
   }
 `;
 
@@ -48,6 +53,10 @@ export const Item = styled.div`
   align-items: center;
   gap: 2rem;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 export const Stack = styled.div`
@@ -89,11 +98,12 @@ export const Box = styled.span`
   color: #42d17d;
   font-size: 1.6rem;
   font-weight: 600;
-  text-align: center;
+
+  width: 100%;
+  white-space: wrap;
 
   @media (max-width: 768px) {
     font-size: 1.3rem;
-    padding: 0.8rem 1.7rem;
-    border-radius: 1.8rem;
+    font-weight: 500;
   }
 `;

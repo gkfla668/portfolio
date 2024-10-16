@@ -2,6 +2,7 @@ import { fadeIn } from "@/styles/animation";
 import styled from "styled-components";
 
 export const Container = styled.div`
+  height: 36rem;
   padding: 0 3rem;
 
   display: flex;
@@ -11,11 +12,25 @@ export const Container = styled.div`
   animation: ${fadeIn} 6s forwards;
   overflow: hidden;
 
-  height: 38rem;
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    height: 100%;
+    justify-content: space-between;
+  }
+`;
+
+export const Content = styled.div`
+  height: 100%;
+
+  display: flex;
+  gap: 5.2rem;
+  overflow: hidden; /* 컨텐츠 넘침 방지 */
+
+  margin: 2rem 0;
 
   @media (max-width: 768px) {
-    height: 38rem;
-    padding: 2.4rem 1.6rem;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 `;
 
@@ -27,7 +42,7 @@ export const ImageSection = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    width: 28rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,39 +50,17 @@ export const ImageSection = styled.div`
 `;
 
 export const RightSection = styled.div`
-  padding: 4rem 0;
-  display: flex;
-  flex-direction: column;
-
   width: 100%;
 
-  justify-content: space-between;
-
-  @media (max-width: 768px) {
-    padding: 0;
-  }
-`;
-
-export const Content = styled.div`
-  height: 100%;
   display: flex;
-  gap: 5.2rem;
-  overflow: hidden; /* 컨텐츠 넘침 방지 */
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    gap: 0;
-  }
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
 `;
 
 export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
-
-  gap: 0.4rem;
 
   @media (max-width: 768px) {
     line-height: 1rem;
@@ -83,7 +76,7 @@ export const Title = styled.h1`
   line-height: 3.6rem;
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     line-height: 2.8rem;
   }
 `;
@@ -152,7 +145,7 @@ export const DetailButton = styled.button`
     font-weight: 900;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1280px) {
     width: 100%;
     margin-top: 3.6rem;
 
