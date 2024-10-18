@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+import router from "next/router";
 import * as S from "./styledSlide";
 import { SlideProps } from "@/types/global";
 
 const Slide = (props: SlideProps) => {
   const handleDetailNavigation = () => {
-    if (typeof window !== "undefined")
-      sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+    router.push(`/detail/${props.index}`); // router를 사용해 링크로 이동
   };
 
   return (
@@ -29,11 +29,9 @@ const Slide = (props: SlideProps) => {
               ))}
             </S.TagList>
           </S.InfoBox>
-          <Link href={`/detail/${props.index}`}>
-            <S.DetailButton onClick={handleDetailNavigation}>
-              상세보기
-            </S.DetailButton>
-          </Link>
+          <S.DetailButton onClick={handleDetailNavigation}>
+            상세보기
+          </S.DetailButton>
         </S.RightSection>
       </S.Content>
     </S.Container>

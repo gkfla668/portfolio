@@ -20,7 +20,7 @@ const Detail = () => {
       {dataById[parsedId] &&
         (isMobile ? (
           <div className="w-[80%]">
-            <div className="flex w-full flex-col items-center justify-center gap-4">
+            <div className="flex w-full flex-col items-center justify-center gap-14">
               {/** Title */}
               <div className="flex w-full flex-col gap-5">
                 <div>
@@ -155,7 +155,7 @@ const Detail = () => {
           </div>
         ) : (
           <div className="w-[46%]">
-            <div className="flex w-full flex-col items-center justify-center gap-24">
+            <div className="flex w-full flex-col items-center justify-center gap-28">
               {/** Title */}
               <div className="flex w-full flex-col gap-5">
                 <div>
@@ -293,7 +293,7 @@ const Detail = () => {
             </div>
             <div className="mt-28 flex w-full items-center justify-center">
               <S.LinkStyled
-                onClick={() => router.back()}
+                onClick={() => router.push("/")}
                 className="px-14 py-6"
               >
                 목록으로 가기

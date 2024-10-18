@@ -48,8 +48,6 @@ export const WaveCircle = styled.span`
 `;
 
 export const Container = styled.div`
-  animation: ${fadeIn} 4s;
-
   position: relative;
   width: 100%;
   height: 100%;

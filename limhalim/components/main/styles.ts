@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fadeIn, drift } from "@/styles/animation";
+import { drift } from "@/styles/animation";
 
 export const WaveCircle = styled.span`
   div {
@@ -38,8 +38,6 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background: #272727;
-
-  animation: ${fadeIn} 4s;
 `;
 
 export const Box = styled.div`

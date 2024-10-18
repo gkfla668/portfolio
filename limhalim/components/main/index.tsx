@@ -21,10 +21,11 @@ interface BlogPost {
 const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
   const sections = ["Intro", "About", "Skills", "Projects", "Contact"];
 
-  const scrollPosition =
-    typeof window !== "undefined" && sessionStorage.getItem("scrollPosition");
-
   useEffect(() => {
+    const scrollPosition =
+      typeof window !== "undefined" && sessionStorage.getItem("scrollPosition");
+
+    console.log(scrollPosition);
     if (scrollPosition) {
       requestAnimationFrame(() => {
         window.scrollTo(0, parseInt(scrollPosition));
@@ -33,7 +34,7 @@ const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
 
     if (typeof window !== "undefined")
       sessionStorage.removeItem("scrollPosition");
-  }, [scrollPosition]);
+  }, []);
 
   return (
     <S.Container>

@@ -14,8 +14,8 @@ const Intro = () => {
   }, [scroll]);
 
   useEffect(() => {
-    if (typeof window !== "undefined")
-      sessionStorage.removeItem("scrollPosition");
+    // if (typeof window !== "undefined")
+    //   sessionStorage.removeItem("scrollPosition");
 
     let typingInterval: NodeJS.Timeout;
 

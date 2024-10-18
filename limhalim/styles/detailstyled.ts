@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { fadeIn } from "@/styles/animation";
 
 export const Container = styled.div`
   display: flex;
@@ -10,8 +9,6 @@ export const Container = styled.div`
   background-color: #272727;
   padding-bottom: 10rem;
   padding-top: 8rem;
-
-  animation: ${fadeIn} 2s forwards;
 
   @media (max-width: 768px) {
     padding-top: 5rem;
