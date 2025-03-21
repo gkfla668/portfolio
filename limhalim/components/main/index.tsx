@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 import Intro from "../Intro/Intro";
 import AboutPage from "../About";
-import SkillsPage from "../Skills";
 import ProjectsPage from "../Projects";
 import ContactPage from "../Contact";
 
@@ -19,7 +18,7 @@ interface BlogPost {
 }
 
 const Main = ({ latestPosts }: { latestPosts: BlogPost[] }) => {
-  const sections = ["Intro", "About", "Skills", "Projects", "Contact"];
+  const sections = ["Intro", "About", "Projects", "Contact"];
 
   useEffect(() => {
     const scrollPosition =
@@ -65,8 +64,6 @@ const getPageComponent = (section: string, latestPosts: BlogPost[]) => {
       return <Intro />;
     case "About":
       return <AboutPage />;
-    case "Skills":
-      return <SkillsPage />;
     case "Projects":
       return <ProjectsPage />;
     case "Contact":
