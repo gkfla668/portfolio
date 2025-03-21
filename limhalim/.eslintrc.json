@@ -1,5 +1,9 @@
 {
-  "ignorePatterns": ["postcss.config.js", "**/node_modules/*"],
+  "ignorePatterns": [
+    "postcss.config.js",
+    "**/node_modules/*",
+    "next.config.mjs"
+  ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier"],
   "parserOptions": {

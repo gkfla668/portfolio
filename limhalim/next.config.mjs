@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+const nextConfig = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+})({
   reactStrictMode: true,
   swcMinify: true,
   compiler: {
@@ -8,6 +12,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-};
+});
 
 export default nextConfig;
